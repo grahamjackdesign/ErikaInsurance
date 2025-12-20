@@ -90,21 +90,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Purple wave at bottom */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg
-          viewBox="0 0 1440 200"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full"
-        >
-          <path
-            d="M0,100 C320,150 480,50 720,100 C960,150 1120,50 1440,100 L1440,200 L0,200 Z"
-            fill="#7878ED"
-            fillOpacity="0.3"
-          />
-        </svg>
-      </div>
+      {/* Solid purple bottom section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-primary"></div>
     </section>
   )
 }
