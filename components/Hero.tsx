@@ -68,40 +68,22 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            {/* Right side - Profile image */}
+            {/* Right side - Header image */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative">
-                {/* Main circular image container */}
-                <div className="relative w-full max-w-md mx-auto aspect-square">
-                  {/* Purple background circle */}
-                  <div className="absolute inset-0 bg-primary rounded-full"></div>
-                  
-                  {/* Profile image - replace with actual image */}
-                  <div className="absolute inset-0 rounded-full overflow-hidden border-8 border-white shadow-2xl">
-                    {/* Replace this with actual image */}
-                    <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
-                      <span className="text-white text-6xl">EE</span>
-                    </div>
-                    {/* Uncomment and use this when you have the actual image:
-                    <Image
-                      src="/images/erika-profile.jpg"
-                      alt="Erika Echevarri"
-                      fill
-                      className="object-cover"
-                    />
-                    */}
-                  </div>
-
-                  {/* Decorative circles */}
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-primary rounded-full -translate-y-1/3 translate-x-1/3"></div>
-                  <div className="absolute bottom-1/4 -left-8 w-20 h-20 border-4 border-primary rounded-full"></div>
-                  <div className="absolute bottom-12 left-1/4 w-16 h-16 border-4 border-gray-900 rounded-full"></div>
-                </div>
+              <div className="relative w-full max-w-md mx-auto">
+                <Image
+                  src="/images/erika-header.png"
+                  alt="Erika Echevarri"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto"
+                  priority
+                />
               </div>
             </motion.div>
           </div>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,8 +21,15 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-20">
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
-            <a href="#" className="text-2xl lg:text-3xl font-bold text-gray-900">
-              Erika Echavarri
+            <a href="#" className="block">
+              <Image
+                src="/images/logoerika.png"
+                alt="Erika Echevarri - Asesor Patrimonial"
+                width={200}
+                height={75}
+                className="h-[75px] w-auto"
+                priority
+              />
             </a>
           </div>
 
