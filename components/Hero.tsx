@@ -5,9 +5,9 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-white pt-20">
-      {/* Add padding-top for fixed nav (80px) + sticky banner (~60px) = 140px total */}
-      <div className="pt-16 pb-20">
+    <section className="relative bg-white pt-20" style={{ minHeight: 'calc(100vh - 70px)' }}>
+      {/* Reduced padding to move purple section up */}
+      <div className="pt-8 pb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Text content */}
