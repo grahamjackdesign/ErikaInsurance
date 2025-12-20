@@ -13,17 +13,6 @@ export default function Nosotros() {
     'Seguro de mascotas para cuidar y proteger a tus amigos peludos.',
   ]
 
-  const insuranceLogos = [
-    { name: 'GNP', src: '/images/logos/gnp.png' },
-    { name: 'SKANDIA', src: '/images/logos/skandia.png' },
-    { name: 'SEGUROS MONTERREY', src: '/images/logos/monterrey.png' },
-    { name: 'BUPA', src: '/images/logos/bupa.png' },
-    { name: 'MAPFRE', src: '/images/logos/mapfre.png' },
-    { name: 'AXA', src: '/images/logos/axa.png' },
-    { name: 'ZURICH', src: '/images/logos/zurich.png' },
-    { name: 'PLAN SEGURO', src: '/images/logos/planseguro.png' },
-  ]
-
   const valores = [
     'CONFIANZA',
     'CALIDEZ',
@@ -33,7 +22,7 @@ export default function Nosotros() {
   ]
 
   return (
-    <section id="nosotros" className="relative bg-gradient-to-b from-primary to-primary-dark py-20">
+    <section id="nosotros" className="relative bg-gradient-to-b from-primary to-primary-dark py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -42,83 +31,80 @@ export default function Nosotros() {
           viewport={{ once: true }}
           className="space-y-12"
         >
-          {/* Main Header */}
+          {/* Header */}
           <div className="text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
               Nosotros
             </h2>
           </div>
 
-          {/* Introduction */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12 space-y-6">
-            <p className="text-white text-lg leading-relaxed">
-              Somos un equipo de profesionales apasionados por la protección de la salud y el patrimonio. 
-              Nos ocupamos por el bienestar de las familias y empresas, y nos especializamos en ofrecer 
-              soluciones personalizadas para proteger lo que más importa.
-            </p>
+          {/* Introduction with Image on Left */}
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            {/* Left - Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <Image
+                src="/images/erika-foto2.png"
+                alt="Protección y Seguridad"
+                width={500}
+                height={300}
+                className="w-full h-auto rounded-3xl"
+              />
+            </motion.div>
 
-            {/* Services List */}
-            <div className="mt-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Nuestros servicios incluyen:</h3>
-              <ul className="space-y-4">
-                {services.map((service, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-start gap-3 text-white"
-                  >
-                    <span className="text-2xl mt-1">•</span>
-                    <span className="text-lg">{service}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
+            {/* Right - Text Panel */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12 space-y-6">
+                <p className="text-white text-lg leading-relaxed">
+                  Somos un equipo de profesionales apasionados por la protección de la salud y el patrimonio. 
+                  Nos ocupamos por el bienestar de las familias y empresas, y nos especializamos en ofrecer 
+                  soluciones personalizadas para proteger lo que más importa.
+                </p>
 
-            {/* Philosophy */}
-            <div className="mt-12 space-y-6">
-              <p className="text-white text-lg leading-relaxed">
-                Creemos que la protección de la salud y el bienestar es fundamental para vivir una vida 
-                plena y feliz. Es por eso que trabajamos con las mejores empresas de seguros del mercado 
-                para ofrecerte soluciones personalizadas y efectivas.
-              </p>
-              <p className="text-white text-lg leading-relaxed">
-                Nuestro objetivo es ser tu socio de confianza en la protección de tu futuro y el de 
-                tus seres queridos.
-              </p>
-            </div>
-          </div>
-
-          {/* Insurance Partners */}
-          <div className="bg-white rounded-3xl p-8 lg:p-12">
-            <h3 className="text-2xl lg:text-3xl font-bold text-primary text-center mb-8">
-              Nuestras alianzas con empresas como:
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center mb-8">
-              {insuranceLogos.map((logo, index) => (
-                <div key={index} className="w-32 h-20 relative grayscale hover:grayscale-0 transition-all duration-300">
-                  {/* Replace with actual logos */}
-                  <div className="w-full h-full flex items-center justify-center border border-gray-200 rounded-lg">
-                    <span className="text-xs text-gray-600 font-medium text-center px-2">
-                      {logo.name}
-                    </span>
-                  </div>
-                  {/* Uncomment when you have actual logos:
-                  <Image
-                    src={logo.src}
-                    alt={logo.name}
-                    fill
-                    className="object-contain"
-                  />
-                  */}
+                {/* Services List */}
+                <div className="mt-8">
+                  <h3 className="text-2xl font-bold text-white mb-6">Nuestros servicios incluyen:</h3>
+                  <ul className="space-y-4">
+                    {services.map((service, index) => (
+                      <motion.li
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="flex items-start gap-3 text-white"
+                      >
+                        <span className="text-2xl mt-1">•</span>
+                        <span className="text-lg">{service}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
                 </div>
-              ))}
-            </div>
-            <p className="text-gray-700 text-lg text-center leading-relaxed">
-              Nos permiten ofrecerte los mejores productos y servicios para satisfacer tus necesidades.
-            </p>
+
+                {/* Philosophy */}
+                <div className="mt-12 space-y-6">
+                  <p className="text-white text-lg leading-relaxed">
+                    Creemos que la protección de la salud y el bienestar es fundamental para vivir una vida 
+                    plena y feliz. Es por eso que trabajamos con las mejores empresas de seguros del mercado 
+                    para ofrecerte soluciones personalizadas y efectivas.
+                  </p>
+                  <p className="text-white text-lg leading-relaxed">
+                    Nuestro objetivo es ser tu socio de confianza en la protección de tu futuro y el de 
+                    tus seres queridos.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
           {/* Call to Action */}
