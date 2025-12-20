@@ -10,11 +10,14 @@ export default function CTABanner() {
   }
 
   return (
-    <div className="sticky top-[72px] z-40 bg-gradient-to-r from-primary via-primary-dark to-primary shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-center">
+    <div className="sticky top-[80px] z-40 bg-primary shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-center gap-4">
+        <span className="text-white font-medium text-lg">
+          Asesoría gratuita por videollamada.
+        </span>
         <motion.button
           onClick={handleScheduleCall}
-          className="px-8 py-4 bg-white text-primary font-bold text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+          className="px-6 py-2.5 bg-white text-primary font-bold text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-white"
           animate={{
             boxShadow: [
               '0 10px 30px rgba(255,255,255,0.3)',
@@ -28,9 +31,10 @@ export default function CTABanner() {
             ease: 'easeInOut',
           }}
         >
-          📞 Asesoría gratuita por videollamada. ¡Agenda hoy!
+          ¡Agenda hoy!
         </motion.button>
       </div>
     </div>
   )
 }
+
