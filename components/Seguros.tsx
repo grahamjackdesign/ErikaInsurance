@@ -6,6 +6,11 @@ import Image from 'next/image'
 
 export default function Seguros() {
   const [activeInsurance, setActiveInsurance] = useState('medicos')
+  
+  // Expand/collapse states for each insurance type
+  const [expandedMedicos, setExpandedMedicos] = useState(false)
+  const [expandedMascotas, setExpandedMascotas] = useState(false)
+  const [expandedAutos, setExpandedAutos] = useState(false)
 
   const benefits = [
     'Consultas gratuitas o costo preferencial con especialistas.',
@@ -297,15 +302,40 @@ export default function Seguros() {
                     <p className="text-lg leading-relaxed text-gray-dark">
                       Proteger tu es lo más importante para ti y tus seres queridos.
                     </p>
-                    <p className="text-lg leading-relaxed text-gray-dark">
-                      Un seguro de <span className="font-bold">GASTOS MÉDICOS MAYORES</span> te da tranquilidad en caso 
-                      de emergencia médica, cubriendo gastos hospitalarios, ambulancia, cirugías y tratamientos.
-                    </p>
-                    <p className="text-lg leading-relaxed text-gray-dark">
-                      Entendemos la importancia de la salud y la seguridad financiera. Por eso, ofrecemos una 
-                      amplia gama de seguros de Gastos Medico Mayores para satisfacer tus necesidades y las de 
-                      tus seres queridos.
-                    </p>
+                    
+                    {expandedMedicos && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="space-y-4"
+                      >
+                        <p className="text-lg leading-relaxed text-gray-dark">
+                          Un seguro de <span className="font-bold">GASTOS MÉDICOS MAYORES</span> te da tranquilidad en caso 
+                          de emergencia médica, cubriendo gastos hospitalarios, ambulancia, cirugías y tratamientos.
+                        </p>
+                        <p className="text-lg leading-relaxed text-gray-dark">
+                          Entendemos la importancia de la salud y la seguridad financiera. Por eso, ofrecemos una 
+                          amplia gama de seguros de Gastos Medico Mayores para satisfacer tus necesidades y las de 
+                          tus seres queridos.
+                        </p>
+                      </motion.div>
+                    )}
+                    
+                    <button
+                      onClick={() => setExpandedMedicos(!expandedMedicos)}
+                      className="text-primary font-semibold hover:text-primary-dark transition-colors flex items-center gap-2"
+                    >
+                      {expandedMedicos ? 'Leer menos' : 'Leer más'}
+                      <svg
+                        className={`w-4 h-4 transition-transform ${expandedMedicos ? 'rotate-180' : ''}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
                   </div>
 
                   <div className="bg-primary-light/20 rounded-2xl p-6">
@@ -362,23 +392,47 @@ export default function Seguros() {
                           <span className="text-primary text-xl mt-1">•</span>
                           <span className="text-lg">Servicio de cremación en caso de fallecimiento por enfermedad o accidente</span>
                         </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Responsabilidad Civil: te respalda por daños a terceros en su persona, bienes u otras mascotas</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Gastos médicos veterinarios: cubrimos gastos médicos para tu mascota en caso de accidente o enfermedad</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Fallecimiento de mascota: indemnizamos al contratante responsable de la mascota en caso de fallecimiento</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Robo con violencia: indemnizamos al contratante responsable de la mascota en caso de robo con violencia</span>
-                        </li>
+                        
+                        {expandedMascotas && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                          >
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Responsabilidad Civil: te respalda por daños a terceros en su persona, bienes u otras mascotas</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Gastos médicos veterinarios: cubrimos gastos médicos para tu mascota en caso de accidente o enfermedad</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Fallecimiento de mascota: indemnizamos al contratante responsable de la mascota en caso de fallecimiento</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Robo con violencia: indemnizamos al contratante responsable de la mascota en caso de robo con violencia</span>
+                            </li>
+                          </motion.div>
+                        )}
                       </ul>
+                      
+                      <button
+                        onClick={() => setExpandedMascotas(!expandedMascotas)}
+                        className="mt-4 text-primary font-semibold hover:text-primary-dark transition-colors flex items-center gap-2"
+                      >
+                        {expandedMascotas ? 'Leer menos' : 'Leer más'}
+                        <svg
+                          className={`w-4 h-4 transition-transform ${expandedMascotas ? 'rotate-180' : ''}`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
                     </div>
 
                     <div className="bg-primary-light/10 rounded-2xl p-6">
@@ -441,39 +495,63 @@ export default function Seguros() {
                           <span className="text-primary text-xl mt-1">•</span>
                           <span className="text-lg">Responsabilidad Civil: te protegemos en caso de daños a terceros</span>
                         </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Cristales: cubrimos daños a los cristales de tu vehículo</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Robo: te indemnizamos en caso de robo de tu vehículo</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Protección legal: te brindamos apoyo legal en caso de accidente</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Gastos médicos: cubrimos gastos médicos para los ocupantes de tu vehículo</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Responsabilidad civil en Estados Unidos: te protegemos en caso de daños a terceros</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Extensión de Responsabilidad Civil: te brindamos cobertura adicional para daños a terceros</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Repuesto de llantas: te reembolsamos el costo de repuesto de llantas</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Descuento por antigüedad: te ofrecemos un descuento en la prima de tu póliza al contratar una nueva póliza</span>
-                        </li>
+                        
+                        {expandedAutos && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                          >
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Cristales: cubrimos daños a los cristales de tu vehículo</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Robo: te indemnizamos en caso de robo de tu vehículo</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Protección legal: te brindamos apoyo legal en caso de accidente</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Gastos médicos: cubrimos gastos médicos para los ocupantes de tu vehículo</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Responsabilidad civil en Estados Unidos: te protegemos en caso de daños a terceros</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Extensión de Responsabilidad Civil: te brindamos cobertura adicional para daños a terceros</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Repuesto de llantas: te reembolsamos el costo de repuesto de llantas</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Descuento por antigüedad: te ofrecemos un descuento en la prima de tu póliza al contratar una nueva póliza</span>
+                            </li>
+                          </motion.div>
+                        )}
                       </ul>
+                      
+                      <button
+                        onClick={() => setExpandedAutos(!expandedAutos)}
+                        className="mt-4 text-primary font-semibold hover:text-primary-dark transition-colors flex items-center gap-2"
+                      >
+                        {expandedAutos ? 'Leer menos' : 'Leer más'}
+                        <svg
+                          className={`w-4 h-4 transition-transform ${expandedAutos ? 'rotate-180' : ''}`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
                     </div>
 
                     <div className="bg-primary-light/10 rounded-2xl p-6">

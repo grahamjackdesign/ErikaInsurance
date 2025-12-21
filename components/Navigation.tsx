@@ -20,7 +20,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-20">
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
-            <a href="#" className="block">
+            <a href="/" className="block">
               <Image
                 src="/images/logoerika.png"
                 alt="Erika Echevarri - Asesor Patrimonial"

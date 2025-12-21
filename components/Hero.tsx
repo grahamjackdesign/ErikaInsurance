@@ -5,9 +5,9 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="relative bg-white pt-20" style={{ minHeight: 'calc(100vh - 70px)' }}>
-      {/* Increased negative margin to -400px to reduce hero height by 150px more */}
-      <div className="pt-8 pb-0" style={{ marginBottom: '-400px' }}>
+    <section className="relative bg-white pt-20">
+      {/* Removed minHeight constraint - let content determine height */}
+      <div className="pt-8 pb-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Text content */}

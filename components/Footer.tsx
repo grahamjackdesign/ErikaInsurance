@@ -6,10 +6,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   const navLinks = [
-    { name: 'Nosotros', href: '#nosotros' },
-    { name: 'Seguros', href: '#seguros' },
-    { name: 'Planes de ahorro', href: '#ahorros' },
-    { name: 'Contacto', href: '#contacto' },
+    { name: 'Nosotros', href: '/#nosotros' },
+    { name: 'Seguros', href: '/#seguros' },
+    { name: 'Planes de ahorro', href: '/#ahorros' },
+    { name: 'Contacto', href: '/#contacto' },
   ]
 
   const socialLinks = [
