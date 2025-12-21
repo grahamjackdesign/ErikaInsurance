@@ -5,8 +5,8 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="relative bg-white pt-20">
-      {/* Removed minHeight constraint - let content determine height */}
+    <section className="relative bg-white pt-20 pb-36">
+      {/* Added pb-36 (144px) to increase hero height */}
       <div className="pt-8 pb-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -70,8 +70,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Solid purple bottom section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-primary"></div>
+      {/* Solid purple bottom section - reduced height */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-primary"></div>
     </section>
   )
 }

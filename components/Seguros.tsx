@@ -185,7 +185,7 @@ export default function Seguros() {
   }
 
   return (
-    <section id="seguros" className="relative bg-white pt-16 pb-20">
+    <section id="seguros" className="relative bg-white pt-8 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

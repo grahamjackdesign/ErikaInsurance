@@ -31,8 +31,8 @@ export default function Nosotros() {
           viewport={{ once: true }}
           className="space-y-8"
         >
-          {/* Header */}
-          <div className="text-center pt-2">
+          {/* Header - removed top padding to reduce space */}
+          <div className="text-center">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Nosotros
             </h2>
