@@ -10,8 +10,7 @@ export default function Navigation() {
   const navLinks = [
     { name: 'Nosotros', href: '#nosotros' },
     { name: 'Seguros', href: '#seguros' },
-    { name: 'Planes de ahorro', href: '#planes-ahorro' },
-    { name: 'Inversiones', href: '#inversiones' },
+    { name: 'Planes de ahorro', href: '#ahorros' },
     { name: 'Contacto', href: '#contacto' },
   ]
 

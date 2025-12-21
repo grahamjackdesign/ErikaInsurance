@@ -2,6 +2,7 @@ import Hero from '@/components/Hero'
 import Navigation from '@/components/Navigation'
 import Nosotros from '@/components/Nosotros'
 import InsuranceLogos from '@/components/InsuranceLogos'
+import ContactoGeneral from '@/components/ContactoGeneral'
 import Seguros from '@/components/Seguros'
 import Ahorros from '@/components/Ahorros'
 import Footer from '@/components/Footer'
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <Nosotros />
       <InsuranceLogos />
+      <ContactoGeneral />
       <Seguros />
       <Ahorros />
       <Footer />
