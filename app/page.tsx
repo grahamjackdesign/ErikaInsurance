@@ -13,6 +13,7 @@ export default function Home() {
       <CTABanner />
       <Hero />
       <Nosotros />
+      <InsuranceLogos />
       <Seguros />
       <PlanesAhorro />
       <Footer />
