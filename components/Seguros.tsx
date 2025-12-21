@@ -31,9 +31,26 @@ export default function Seguros() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
 
+  // Pet Insurance Form State
+  const [petFormData, setPetFormData] = useState({
+    telefono: '',
+    email: '',
+  })
+
+  const [isPetSubmitting, setIsPetSubmitting] = useState(false)
+  const [petSubmitMessage, setPetSubmitMessage] = useState('')
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handlePetChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+    setPetFormData(prev => ({
       ...prev,
       [name]: value
     }))
@@ -67,6 +84,30 @@ export default function Seguros() {
           medio: '',
         })
         setSubmitMessage('')
+      }, 3000)
+    }, 1000)
+  }
+
+  const handlePetSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsPetSubmitting(true)
+    setPetSubmitMessage('')
+
+    // TODO: Connect to email service later
+    console.log('Pet Insurance Form submitted:', petFormData)
+
+    // Simulate API call
+    setTimeout(() => {
+      setIsPetSubmitting(false)
+      setPetSubmitMessage('¡Gracias! Nos pondremos en contacto contigo pronto.')
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setPetFormData({
+          telefono: '',
+          email: '',
+        })
+        setPetSubmitMessage('')
       }, 3000)
     }, 1000)
   }
@@ -150,9 +191,13 @@ export default function Seguros() {
                 />
               )}
               {activeInsurance === 'mascotas' && (
-                <div className="w-full aspect-square bg-gradient-to-br from-primary-light to-primary rounded-3xl flex items-center justify-center">
-                  <span className="text-white text-6xl">🐾</span>
-                </div>
+                <Image
+                  src="/images/mascotas.png"
+                  alt="Seguro de Mascotas"
+                  width={500}
+                  height={400}
+                  className="w-full h-auto rounded-3xl"
+                />
               )}
               {activeInsurance === 'autos' && (
                 <div className="w-full aspect-square bg-gradient-to-br from-primary-light to-primary rounded-3xl flex items-center justify-center">
@@ -209,16 +254,87 @@ export default function Seguros() {
               )}
 
               {activeInsurance === 'mascotas' && (
-                <div className="space-y-4">
-                  <p className="text-lg leading-relaxed text-gray-dark">
-                    Protege a tus amigos peludos con nuestro seguro de mascotas. Cobertura completa para 
-                    consultas veterinarias, emergencias, cirugías y tratamientos.
-                  </p>
-                  <p className="text-lg leading-relaxed text-gray-dark">
-                    Porque tu mascota es parte de tu familia, ofrecemos planes diseñados especialmente 
-                    para su cuidado y bienestar.
-                  </p>
-                </div>
+                <>
+                  <div className="space-y-6">
+                    <h3 className="text-2xl font-bold text-primary">
+                      Seguro para Mascotas: Protección para tus Amigos Peludos
+                    </h3>
+                    
+                    <p className="text-lg leading-relaxed text-gray-dark">
+                      Nuestro seguro para mascotas está diseñado para brindarte protección y tranquilidad para 
+                      tus perros y gatos que forman parte de la familia. Puedes elegir las coberturas y asistencia 
+                      según las necesidades de tu mascota.
+                    </p>
+
+                    <div className="bg-primary-light/20 rounded-2xl p-6">
+                      <h4 className="text-xl font-bold text-primary mb-4">
+                        Coberturas y Beneficios
+                      </h4>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Protege a tus perros y gatos desde los 3 meses hasta los 9 años</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Personaliza las coberturas y deducible según las necesidades de tu mascota</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Cubrimos el fallecimiento de tu mascota por enfermedad o accidente</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Orientación veterinaria telefónica las 24 horas, los 7 días de la semana</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Servicio de cremación en caso de fallecimiento por enfermedad o accidente</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Responsabilidad Civil: te respalda por daños a terceros en su persona, bienes u otras mascotas</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Gastos médicos veterinarios: cubrimos gastos médicos para tu mascota en caso de accidente o enfermedad</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Fallecimiento de mascota: indemnizamos al contratante responsable de la mascota en caso de fallecimiento</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Robo con violencia: indemnizamos al contratante responsable de la mascota en caso de robo con violencia</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-primary-light/10 rounded-2xl p-6">
+                      <h4 className="text-xl font-bold text-primary mb-4">
+                        Ventajas de nuestro Seguro para Mascotas
+                      </h4>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Protección integral para tus mascotas</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Tranquilidad y seguridad para ti y tu familia</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Flexibilidad para adaptar la cobertura a tus necesidades y posibilidades</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <p className="text-lg leading-relaxed text-primary font-medium">
+                      ¡Contáctanos para saber más sobre cómo nuestro Seguro para Mascotas puede ayudarte a proteger a tus amigos peludos!
+                    </p>
+                  </div>
+                </>
               )}
 
               {activeInsurance === 'autos' && (
@@ -234,6 +350,87 @@ export default function Seguros() {
               )}
             </motion.div>
           </div>
+
+          {/* Pet Insurance Contact Form */}
+          {activeInsurance === 'mascotas' && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-12"
+            >
+              <div className="bg-primary-light/10 rounded-3xl p-8 lg:p-12 max-w-2xl mx-auto">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-primary mb-2">
+                    Solicita Información
+                  </h3>
+                  <p className="text-gray-600">
+                    Déjanos tus datos y te contactaremos
+                  </p>
+                </div>
+
+                <form onSubmit={handlePetSubmit} className="space-y-4">
+                  <div>
+                    <label htmlFor="pet-telefono" className="block text-gray-700 font-medium mb-2">
+                      TELÉFONO *
+                    </label>
+                    <input
+                      type="tel"
+                      id="pet-telefono"
+                      name="telefono"
+                      value={petFormData.telefono}
+                      onChange={handlePetChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
+                      placeholder="Ingresa tu teléfono"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="pet-email" className="block text-gray-700 font-medium mb-2">
+                      E MAIL *
+                    </label>
+                    <input
+                      type="email"
+                      id="pet-email"
+                      name="email"
+                      value={petFormData.email}
+                      onChange={handlePetChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
+                      placeholder="Ingresa tu email"
+                    />
+                  </div>
+
+                  <div className="pt-4">
+                    <motion.button
+                      type="submit"
+                      disabled={isPetSubmitting}
+                      whileHover={{ scale: isPetSubmitting ? 1 : 1.02 }}
+                      whileTap={{ scale: isPetSubmitting ? 1 : 0.98 }}
+                      className={`w-full px-8 py-3 rounded-full font-bold text-lg transition-all duration-300 ${
+                        isPetSubmitting
+                          ? 'bg-gray-400 cursor-not-allowed text-white'
+                          : 'bg-primary text-white hover:bg-primary-dark shadow-lg hover:shadow-xl'
+                      }`}
+                    >
+                      {isPetSubmitting ? 'Enviando...' : 'Enviar'}
+                    </motion.button>
+                  </div>
+
+                  {petSubmitMessage && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-4 p-4 bg-primary/10 rounded-lg text-primary text-center font-medium"
+                    >
+                      {petSubmitMessage}
+                    </motion.div>
+                  )}
+                </form>
+              </div>
+            </motion.div>
+          )}
 
           {/* Medical Insurance Contact Form */}
           {activeInsurance === 'medicos' && (
