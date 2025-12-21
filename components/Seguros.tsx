@@ -40,6 +40,28 @@ export default function Seguros() {
   const [isPetSubmitting, setIsPetSubmitting] = useState(false)
   const [petSubmitMessage, setPetSubmitMessage] = useState('')
 
+  // Auto Insurance Form State
+  const [autoFormData, setAutoFormData] = useState({
+    nombre: '',
+    telefono: '',
+    email: '',
+    codigoPostal: '',
+    tipoSeguro: '',
+    fechaNacimiento: '',
+    marca: '',
+    modelo: '',
+    descripcion: '',
+    version: '',
+    transmision: '',
+    adicionales: '',
+    formaPago: '',
+    cobertura: '',
+    comentarios: '',
+  })
+
+  const [isAutoSubmitting, setIsAutoSubmitting] = useState(false)
+  const [autoSubmitMessage, setAutoSubmitMessage] = useState('')
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
@@ -51,6 +73,14 @@ export default function Seguros() {
   const handlePetChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setPetFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleAutoChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setAutoFormData(prev => ({
       ...prev,
       [name]: value
     }))
@@ -108,6 +138,43 @@ export default function Seguros() {
           email: '',
         })
         setPetSubmitMessage('')
+      }, 3000)
+    }, 1000)
+  }
+
+  const handleAutoSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsAutoSubmitting(true)
+    setAutoSubmitMessage('')
+
+    // TODO: Connect to email service later
+    console.log('Auto Insurance Form submitted:', autoFormData)
+
+    // Simulate API call
+    setTimeout(() => {
+      setIsAutoSubmitting(false)
+      setAutoSubmitMessage('¡Gracias! Nos pondremos en contacto contigo pronto.')
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setAutoFormData({
+          nombre: '',
+          telefono: '',
+          email: '',
+          codigoPostal: '',
+          tipoSeguro: '',
+          fechaNacimiento: '',
+          marca: '',
+          modelo: '',
+          descripcion: '',
+          version: '',
+          transmision: '',
+          adicionales: '',
+          formaPago: '',
+          cobertura: '',
+          comentarios: '',
+        })
+        setAutoSubmitMessage('')
       }, 3000)
     }, 1000)
   }
@@ -200,9 +267,13 @@ export default function Seguros() {
                 />
               )}
               {activeInsurance === 'autos' && (
-                <div className="w-full aspect-square bg-gradient-to-br from-primary-light to-primary rounded-3xl flex items-center justify-center">
-                  <span className="text-white text-6xl">🚗</span>
-                </div>
+                <Image
+                  src="/images/auto.png"
+                  alt="Seguro de Autos"
+                  width={500}
+                  height={400}
+                  className="w-full h-auto rounded-3xl"
+                />
               )}
             </motion.div>
 
@@ -338,15 +409,94 @@ export default function Seguros() {
               )}
 
               {activeInsurance === 'autos' && (
-                <div className="space-y-4">
-                  <p className="text-lg leading-relaxed text-gray-dark">
-                    Protege tu vehículo con nuestros seguros de autos. Cobertura amplia, responsabilidad 
-                    civil, robo total, daños materiales y asistencia vial 24/7.
-                  </p>
-                  <p className="text-lg leading-relaxed text-gray-dark">
-                    Con las mejores aseguradoras del mercado, te ofrecemos tranquilidad en cada viaje.
-                  </p>
-                </div>
+                <>
+                  <div className="space-y-6">
+                    <p className="text-lg leading-relaxed text-gray-dark font-medium">
+                      Para nosotros la seguridad es lo más importante. No escatimes en tu seguro de auto, 
+                      invierte en la mejor cobertura. ¡Cotiza ahora y ten la tranquilidad de estar protegido!
+                    </p>
+
+                    <div className="bg-primary-light/20 rounded-2xl p-6">
+                      <h4 className="text-xl font-bold text-primary mb-4">
+                        Coberturas y Beneficios
+                      </h4>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Daños materiales: cubrimos daños a tu vehículo en caso de accidente, incendio o robo</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Pérdida total: te indemnizamos en caso de pérdida total de tu vehículo</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Daños a terceros: cubrimos daños a personas o propiedades de terceros</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Asistencia vial: te brindamos asistencia en caso de avería o accidente</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Responsabilidad Civil: te protegemos en caso de daños a terceros</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Cristales: cubrimos daños a los cristales de tu vehículo</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Robo: te indemnizamos en caso de robo de tu vehículo</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Protección legal: te brindamos apoyo legal en caso de accidente</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Gastos médicos: cubrimos gastos médicos para los ocupantes de tu vehículo</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Responsabilidad civil en Estados Unidos: te protegemos en caso de daños a terceros</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Extensión de Responsabilidad Civil: te brindamos cobertura adicional para daños a terceros</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Repuesto de llantas: te reembolsamos el costo de repuesto de llantas</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Descuento por antigüedad: te ofrecemos un descuento en la prima de tu póliza al contratar una nueva póliza</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-primary-light/10 rounded-2xl p-6">
+                      <h4 className="text-xl font-bold text-primary mb-4">
+                        Ventajas de nuestra cobertura
+                      </h4>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Protección integral para tu vehículo y tus seres queridos</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Tranquilidad y seguridad en caso de accidente o imprevisto</span>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-dark">
+                          <span className="text-primary text-xl mt-1">•</span>
+                          <span className="text-lg">Flexibilidad para adaptar la cobertura a tus necesidades y posibilidades</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </>
               )}
             </motion.div>
           </div>
@@ -425,6 +575,313 @@ export default function Seguros() {
                       className="mt-4 p-4 bg-primary/10 rounded-lg text-primary text-center font-medium"
                     >
                       {petSubmitMessage}
+                    </motion.div>
+                  )}
+                </form>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Auto Insurance Contact Form */}
+          {activeInsurance === 'autos' && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-12"
+            >
+              <div className="bg-primary-light/10 rounded-3xl p-8 lg:p-12">
+                <div className="text-center mb-8">
+                  <h3 className="text-3xl font-bold text-primary mb-2">
+                    Nosotros te Contactamos
+                  </h3>
+                </div>
+
+                <form onSubmit={handleAutoSubmit} className="space-y-6 max-w-4xl mx-auto">
+                  {/* Nombre y Teléfono */}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="auto-nombre" className="block text-gray-700 font-medium mb-2">
+                        NOMBRE *
+                      </label>
+                      <input
+                        type="text"
+                        id="auto-nombre"
+                        name="nombre"
+                        value={autoFormData.nombre}
+                        onChange={handleAutoChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        placeholder="Tu nombre"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="auto-telefono" className="block text-gray-700 font-medium mb-2">
+                        TELÉFONO *
+                      </label>
+                      <input
+                        type="tel"
+                        id="auto-telefono"
+                        name="telefono"
+                        value={autoFormData.telefono}
+                        onChange={handleAutoChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        placeholder="Tu teléfono"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Email y Código Postal */}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="auto-email" className="block text-gray-700 font-medium mb-2">
+                        E-MAIL *
+                      </label>
+                      <input
+                        type="email"
+                        id="auto-email"
+                        name="email"
+                        value={autoFormData.email}
+                        onChange={handleAutoChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        placeholder="Tu email"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="auto-codigoPostal" className="block text-gray-700 font-medium mb-2">
+                        CÓDIGO POSTAL *
+                      </label>
+                      <input
+                        type="text"
+                        id="auto-codigoPostal"
+                        name="codigoPostal"
+                        value={autoFormData.codigoPostal}
+                        onChange={handleAutoChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        placeholder="Código postal"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Tipo de Seguro y Fecha de Nacimiento */}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="auto-tipoSeguro" className="block text-gray-700 font-medium mb-2">
+                        TIPO DE SEGURO
+                      </label>
+                      <input
+                        type="text"
+                        id="auto-tipoSeguro"
+                        name="tipoSeguro"
+                        value={autoFormData.tipoSeguro}
+                        onChange={handleAutoChange}
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        placeholder="Tipo de seguro"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="auto-fechaNacimiento" className="block text-gray-700 font-medium mb-2">
+                        FECHA DE NACIMIENTO
+                      </label>
+                      <input
+                        type="date"
+                        id="auto-fechaNacimiento"
+                        name="fechaNacimiento"
+                        value={autoFormData.fechaNacimiento}
+                        onChange={handleAutoChange}
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Descripción del Vehículo Header */}
+                  <div className="pt-4">
+                    <h4 className="text-lg font-bold text-gray-700 mb-4">DESCRIPCIÓN DEL VEHÍCULO:</h4>
+                  </div>
+
+                  {/* Marca y Modelo */}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="auto-marca" className="block text-gray-700 font-medium mb-2">
+                        MARCA
+                      </label>
+                      <input
+                        type="text"
+                        id="auto-marca"
+                        name="marca"
+                        value={autoFormData.marca}
+                        onChange={handleAutoChange}
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        placeholder="Marca del vehículo"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="auto-modelo" className="block text-gray-700 font-medium mb-2">
+                        MODELO
+                      </label>
+                      <input
+                        type="text"
+                        id="auto-modelo"
+                        name="modelo"
+                        value={autoFormData.modelo}
+                        onChange={handleAutoChange}
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        placeholder="Modelo"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Descripción y Versión */}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="auto-descripcion" className="block text-gray-700 font-medium mb-2">
+                        DESCRIPCIÓN
+                      </label>
+                      <input
+                        type="text"
+                        id="auto-descripcion"
+                        name="descripcion"
+                        value={autoFormData.descripcion}
+                        onChange={handleAutoChange}
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        placeholder="Descripción"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="auto-version" className="block text-gray-700 font-medium mb-2">
+                        VERSIÓN
+                      </label>
+                      <input
+                        type="text"
+                        id="auto-version"
+                        name="version"
+                        value={autoFormData.version}
+                        onChange={handleAutoChange}
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        placeholder="Versión"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Transmisión y Adicionales */}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="auto-transmision" className="block text-gray-700 font-medium mb-2">
+                        TRANSMISIÓN
+                      </label>
+                      <input
+                        type="text"
+                        id="auto-transmision"
+                        name="transmision"
+                        value={autoFormData.transmision}
+                        onChange={handleAutoChange}
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        placeholder="Transmisión"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="auto-adicionales" className="block text-gray-700 font-medium mb-2">
+                        ADICIONALES
+                      </label>
+                      <input
+                        type="text"
+                        id="auto-adicionales"
+                        name="adicionales"
+                        value={autoFormData.adicionales}
+                        onChange={handleAutoChange}
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        placeholder="Adicionales"
+                      />
+                    </div>
+                  </div>
+
+                  {/* ¿Cómo desea que coticemos? Header */}
+                  <div className="pt-4">
+                    <h4 className="text-lg font-bold text-gray-700 mb-4">¿CÓMO DESEA QUE COTICEMOS?</h4>
+                  </div>
+
+                  {/* Forma de Pago y Cobertura */}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="auto-formaPago" className="block text-gray-700 font-medium mb-2">
+                        FORMA DE PAGO
+                      </label>
+                      <input
+                        type="text"
+                        id="auto-formaPago"
+                        name="formaPago"
+                        value={autoFormData.formaPago}
+                        onChange={handleAutoChange}
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        placeholder="Forma de pago"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="auto-cobertura" className="block text-gray-700 font-medium mb-2">
+                        COBERTURA
+                      </label>
+                      <input
+                        type="text"
+                        id="auto-cobertura"
+                        name="cobertura"
+                        value={autoFormData.cobertura}
+                        onChange={handleAutoChange}
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                        placeholder="Cobertura"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Comentarios */}
+                  <div>
+                    <label htmlFor="auto-comentarios" className="block text-gray-700 font-medium mb-2">
+                      COMENTARIOS
+                    </label>
+                    <textarea
+                      id="auto-comentarios"
+                      name="comentarios"
+                      value={autoFormData.comentarios}
+                      onChange={handleAutoChange}
+                      rows={4}
+                      className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                      placeholder="Comentarios adicionales"
+                    />
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="pt-6">
+                    <motion.button
+                      type="submit"
+                      disabled={isAutoSubmitting}
+                      whileHover={{ scale: isAutoSubmitting ? 1 : 1.02 }}
+                      whileTap={{ scale: isAutoSubmitting ? 1 : 0.98 }}
+                      className={`w-full md:w-auto px-12 py-4 rounded-full font-bold text-lg transition-all duration-300 ${
+                        isAutoSubmitting
+                          ? 'bg-gray-400 cursor-not-allowed text-white'
+                          : 'bg-primary text-white hover:bg-primary-dark shadow-lg hover:shadow-xl'
+                      }`}
+                    >
+                      {isAutoSubmitting ? 'Enviando...' : 'Enviar'}
+                    </motion.button>
+                  </div>
+
+                  {autoSubmitMessage && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-4 p-4 bg-primary/10 rounded-lg text-primary text-center font-medium"
+                    >
+                      {autoSubmitMessage}
                     </motion.div>
                   )}
                 </form>
