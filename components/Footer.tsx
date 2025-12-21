@@ -104,8 +104,18 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-          <p>&copy; {currentYear} Erika Echevarri. Todos los derechos reservados.</p>
+        <div className="border-t border-gray-800 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
+            <p>&copy; {currentYear} Erika Echevarri. Todos los derechos reservados.</p>
+            <div className="flex gap-6">
+              <a href="/terminos-condiciones" className="hover:text-white transition-colors">
+                Términos y Condiciones
+              </a>
+              <a href="/politica-privacidad" className="hover:text-white transition-colors">
+                Política de Privacidad
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
