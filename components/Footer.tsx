@@ -82,7 +82,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Contacto</h3>
             <div className="space-y-2 text-gray-400 text-sm mb-6">
               <p>Email: contacto@erikaechevarri.com</p>
-              <p>Teléfono: +52 123 456 7890</p>
+              <p>Teléfono: +52 552 661 9640</p>
             </div>
             
             <h4 className="text-sm font-semibold mb-3">Síguenos</h4>
