@@ -132,18 +132,25 @@ export default function Nosotros() {
                   </button>
                 </div>
 
-                {/* Philosophy */}
-                <div className="mt-12 space-y-6">
-                  <p className="text-white text-lg leading-relaxed">
-                    Creemos que la protección de la salud y el bienestar es fundamental para vivir una vida 
-                    plena y feliz. Es por eso que trabajamos con las mejores empresas de seguros del mercado 
-                    para ofrecerte soluciones personalizadas y efectivas.
-                  </p>
-                  <p className="text-white text-lg leading-relaxed">
-                    Nuestro objetivo es ser tu socio de confianza en la protección de tu futuro y el de 
-                    tus seres queridos.
-                  </p>
-                </div>
+                {/* Philosophy - now inside expandable content */}
+                {expandedNosotros && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="mt-12 space-y-6"
+                  >
+                    <p className="text-white text-lg leading-relaxed">
+                      Creemos que la protección de la salud y el bienestar es fundamental para vivir una vida 
+                      plena y feliz. Es por eso que trabajamos con las mejores empresas de seguros del mercado 
+                      para ofrecerte soluciones personalizadas y efectivas.
+                    </p>
+                    <p className="text-white text-lg leading-relaxed">
+                      Nuestro objetivo es ser tu socio de confianza en la protección de tu futuro y el de 
+                      tus seres queridos.
+                    </p>
+                  </motion.div>
+                )}
               </div>
             </motion.div>
           </div>
