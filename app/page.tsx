@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero'
 import Navigation from '@/components/Navigation'
 import Nosotros from '@/components/Nosotros'
+import InsuranceLogos from '@/components/InsuranceLogos'
 import Seguros from '@/components/Seguros'
 import PlanesAhorro from '@/components/PlanesAhorro'
 import Footer from '@/components/Footer'
