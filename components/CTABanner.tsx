@@ -6,7 +6,7 @@ export default function CTABanner() {
   const handleScheduleCall = () => {
     // You can link this to a calendar booking system or WhatsApp
     // For now, it scrolls to contact or opens WhatsApp
-    window.open('https://wa.me/5215551234567?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20videollamada%20gratuita', '_blank')
+    window.open('https://wa.me/525526619640?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20videollamada%20gratuita', '_blank')
   }
 
   return (
