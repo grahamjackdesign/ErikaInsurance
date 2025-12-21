@@ -27,29 +27,46 @@ export default function ContactoGeneral() {
     setIsSubmitting(true)
     setSubmitMessage('')
 
-    // TODO: Connect to email service later
-    console.log('General Contact Form submitted:', formData)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'contacto',
+          ...formData,
+        }),
+      })
 
-    // Simulate API call
-    setTimeout(() => {
+      const result = await response.json()
+
+      if (response.ok) {
+        setSubmitMessage('¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.')
+        
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setFormData({
+            nombre: '',
+            email: '',
+            telefono: '',
+            mensaje: '',
+          })
+          setSubmitMessage('')
+        }, 3000)
+      } else {
+        setSubmitMessage('Hubo un error. Por favor intenta de nuevo.')
+      }
+    } catch (error) {
+      console.error('Error sending form:', error)
+      setSubmitMessage('Hubo un error. Por favor intenta de nuevo.')
+    } finally {
       setIsSubmitting(false)
-      setSubmitMessage('¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.')
-      
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setFormData({
-          nombre: '',
-          email: '',
-          telefono: '',
-          mensaje: '',
-        })
-        setSubmitMessage('')
-      }, 3000)
-    }, 1000)
+    }
   }
 
   return (
-    <section id="contacto" className="relative bg-gradient-to-b from-primary to-primary-dark pt-28 pb-20">
+    <section id="contacto" className="relative bg-gradient-to-b from-primary to-primary-dark pt-32 pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

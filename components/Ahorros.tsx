@@ -62,31 +62,47 @@ export default function Ahorros() {
     setIsRetiroSubmitting(true)
     setRetiroSubmitMessage('')
 
-    // TODO: Connect to email service later
-    console.log('Retirement Plan Form submitted:', retiroFormData)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'planes-retiro',
+          ...retiroFormData,
+        }),
+      })
 
-    // Simulate API call
-    setTimeout(() => {
+      const result = await response.json()
+
+      if (response.ok) {
+        setRetiroSubmitMessage('¡Gracias! Nos pondremos en contacto contigo pronto.')
+        
+        setTimeout(() => {
+          setRetiroFormData({
+            nombre: '',
+            email: '',
+            telefono: '',
+            edad: '',
+            fumador: '',
+            metaAhorro: '',
+            ahorroMensual: '',
+            rendimiento: '',
+            inversion: '',
+            mensaje: '',
+          })
+          setRetiroSubmitMessage('')
+        }, 3000)
+      } else {
+        setRetiroSubmitMessage('Hubo un error. Por favor intenta de nuevo.')
+      }
+    } catch (error) {
+      console.error('Error sending form:', error)
+      setRetiroSubmitMessage('Hubo un error. Por favor intenta de nuevo.')
+    } finally {
       setIsRetiroSubmitting(false)
-      setRetiroSubmitMessage('¡Gracias! Nos pondremos en contacto contigo pronto.')
-      
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setRetiroFormData({
-          nombre: '',
-          email: '',
-          telefono: '',
-          edad: '',
-          fumador: '',
-          metaAhorro: '',
-          ahorroMensual: '',
-          rendimiento: '',
-          inversion: '',
-          mensaje: '',
-        })
-        setRetiroSubmitMessage('')
-      }, 3000)
-    }, 1000)
+    }
   }
 
   const handleUniversidadSubmit = async (e: React.FormEvent) => {
@@ -94,31 +110,47 @@ export default function Ahorros() {
     setIsUniversidadSubmitting(true)
     setUniversidadSubmitMessage('')
 
-    // TODO: Connect to email service later
-    console.log('University Plan Form submitted:', universidadFormData)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'planes-universidad',
+          ...universidadFormData,
+        }),
+      })
 
-    // Simulate API call
-    setTimeout(() => {
+      const result = await response.json()
+
+      if (response.ok) {
+        setUniversidadSubmitMessage('¡Gracias! Nos pondremos en contacto contigo pronto.')
+        
+        setTimeout(() => {
+          setUniversidadFormData({
+            nombre: '',
+            email: '',
+            telefono: '',
+            edad: '',
+            fumador: '',
+            metaAhorro: '',
+            ahorroMensual: '',
+            rendimiento: '',
+            inversion: '',
+            mensaje: '',
+          })
+          setUniversidadSubmitMessage('')
+        }, 3000)
+      } else {
+        setUniversidadSubmitMessage('Hubo un error. Por favor intenta de nuevo.')
+      }
+    } catch (error) {
+      console.error('Error sending form:', error)
+      setUniversidadSubmitMessage('Hubo un error. Por favor intenta de nuevo.')
+    } finally {
       setIsUniversidadSubmitting(false)
-      setUniversidadSubmitMessage('¡Gracias! Nos pondremos en contacto contigo pronto.')
-      
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setUniversidadFormData({
-          nombre: '',
-          email: '',
-          telefono: '',
-          edad: '',
-          fumador: '',
-          metaAhorro: '',
-          ahorroMensual: '',
-          rendimiento: '',
-          inversion: '',
-          mensaje: '',
-        })
-        setUniversidadSubmitMessage('')
-      }, 3000)
-    }, 1000)
+    }
   }
 
   return (

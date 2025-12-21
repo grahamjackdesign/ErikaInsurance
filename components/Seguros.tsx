@@ -96,31 +96,47 @@ export default function Seguros() {
     setIsSubmitting(true)
     setSubmitMessage('')
 
-    // TODO: Connect to email service later
-    console.log('Medical Insurance Form submitted:', formData)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'gastos-medicos',
+          ...formData,
+        }),
+      })
 
-    // Simulate API call
-    setTimeout(() => {
+      const result = await response.json()
+
+      if (response.ok) {
+        setSubmitMessage('¡Gracias! Nos pondremos en contacto contigo pronto.')
+        
+        setTimeout(() => {
+          setFormData({
+            telefono: '',
+            email: '',
+            plan: '',
+            cobertura: '',
+            nombre: '',
+            fechaNacimiento: '',
+            codigoPostal: '',
+            enfermedad: '',
+            horario: '',
+            medio: '',
+          })
+          setSubmitMessage('')
+        }, 3000)
+      } else {
+        setSubmitMessage('Hubo un error. Por favor intenta de nuevo.')
+      }
+    } catch (error) {
+      console.error('Error sending form:', error)
+      setSubmitMessage('Hubo un error. Por favor intenta de nuevo.')
+    } finally {
       setIsSubmitting(false)
-      setSubmitMessage('¡Gracias! Nos pondremos en contacto contigo pronto.')
-      
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setFormData({
-          telefono: '',
-          email: '',
-          plan: '',
-          cobertura: '',
-          nombre: '',
-          fechaNacimiento: '',
-          codigoPostal: '',
-          enfermedad: '',
-          horario: '',
-          medio: '',
-        })
-        setSubmitMessage('')
-      }, 3000)
-    }, 1000)
+    }
   }
 
   const handlePetSubmit = async (e: React.FormEvent) => {
@@ -128,23 +144,39 @@ export default function Seguros() {
     setIsPetSubmitting(true)
     setPetSubmitMessage('')
 
-    // TODO: Connect to email service later
-    console.log('Pet Insurance Form submitted:', petFormData)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'mascotas',
+          ...petFormData,
+        }),
+      })
 
-    // Simulate API call
-    setTimeout(() => {
+      const result = await response.json()
+
+      if (response.ok) {
+        setPetSubmitMessage('¡Gracias! Nos pondremos en contacto contigo pronto.')
+        
+        setTimeout(() => {
+          setPetFormData({
+            telefono: '',
+            email: '',
+          })
+          setPetSubmitMessage('')
+        }, 3000)
+      } else {
+        setPetSubmitMessage('Hubo un error. Por favor intenta de nuevo.')
+      }
+    } catch (error) {
+      console.error('Error sending form:', error)
+      setPetSubmitMessage('Hubo un error. Por favor intenta de nuevo.')
+    } finally {
       setIsPetSubmitting(false)
-      setPetSubmitMessage('¡Gracias! Nos pondremos en contacto contigo pronto.')
-      
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setPetFormData({
-          telefono: '',
-          email: '',
-        })
-        setPetSubmitMessage('')
-      }, 3000)
-    }, 1000)
+    }
   }
 
   const handleAutoSubmit = async (e: React.FormEvent) => {
@@ -152,36 +184,52 @@ export default function Seguros() {
     setIsAutoSubmitting(true)
     setAutoSubmitMessage('')
 
-    // TODO: Connect to email service later
-    console.log('Auto Insurance Form submitted:', autoFormData)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'autos',
+          ...autoFormData,
+        }),
+      })
 
-    // Simulate API call
-    setTimeout(() => {
+      const result = await response.json()
+
+      if (response.ok) {
+        setAutoSubmitMessage('¡Gracias! Nos pondremos en contacto contigo pronto.')
+        
+        setTimeout(() => {
+          setAutoFormData({
+            nombre: '',
+            telefono: '',
+            email: '',
+            codigoPostal: '',
+            tipoSeguro: '',
+            fechaNacimiento: '',
+            marca: '',
+            modelo: '',
+            descripcion: '',
+            version: '',
+            transmision: '',
+            adicionales: '',
+            formaPago: '',
+            cobertura: '',
+            comentarios: '',
+          })
+          setAutoSubmitMessage('')
+        }, 3000)
+      } else {
+        setAutoSubmitMessage('Hubo un error. Por favor intenta de nuevo.')
+      }
+    } catch (error) {
+      console.error('Error sending form:', error)
+      setAutoSubmitMessage('Hubo un error. Por favor intenta de nuevo.')
+    } finally {
       setIsAutoSubmitting(false)
-      setAutoSubmitMessage('¡Gracias! Nos pondremos en contacto contigo pronto.')
-      
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setAutoFormData({
-          nombre: '',
-          telefono: '',
-          email: '',
-          codigoPostal: '',
-          tipoSeguro: '',
-          fechaNacimiento: '',
-          marca: '',
-          modelo: '',
-          descripcion: '',
-          version: '',
-          transmision: '',
-          adicionales: '',
-          formaPago: '',
-          cobertura: '',
-          comentarios: '',
-        })
-        setAutoSubmitMessage('')
-      }, 3000)
-    }, 1000)
+    }
   }
 
   return (
