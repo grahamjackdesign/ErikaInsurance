@@ -12,7 +12,7 @@ export default function CTABanner() {
   return (
     <div className="sticky top-[80px] z-40 bg-primary shadow-lg">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-center gap-4">
-        <span className="text-white font-medium text-lg">
+        <span className="text-white font-medium text-2xl">
           Asesoría gratuita por videollamada.
         </span>
         <motion.button
