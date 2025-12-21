@@ -16,9 +16,9 @@ export default function Home() {
       <Hero />
       <Nosotros />
       <InsuranceLogos />
-      <ContactoGeneral />
       <Seguros />
       <Ahorros />
+      <ContactoGeneral />
       <Footer />
     </main>
   )
