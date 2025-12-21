@@ -49,7 +49,7 @@ export default function ContactoGeneral() {
   }
 
   return (
-    <section id="contacto" className="relative bg-gradient-to-b from-primary to-primary-dark py-20">
+    <section id="contacto" className="relative bg-gradient-to-b from-primary to-primary-dark py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

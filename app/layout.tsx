@@ -1,11 +1,18 @@
 import type { Metadata } from 'next'
-import { Roboto } from 'next/font/google'
+import { Roboto, Poppins } from 'next/font/google'
 import './globals.css'
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700', '900'],
   subsets: ['latin'],
   display: 'swap',
+})
+
+const poppins = Poppins({
+  weight: ['400', '500', '600', '700', '800'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
 })
 
 export const metadata: Metadata = {
@@ -27,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={roboto.className}>{children}</body>
+      <body className={`${roboto.className} ${poppins.variable}`}>{children}</body>
     </html>
   )
 }

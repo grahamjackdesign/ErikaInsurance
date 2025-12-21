@@ -5,14 +5,24 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 180px; /* Fixed nav + CTA banner + extra space */
   }
   
   body {
     @apply font-sans antialiased;
   }
+
+  /* Ensure all sections with IDs respect the scroll offset */
+  section[id] {
+    scroll-margin-top: 180px;
+  }
 }
 
 @layer components {
+  .font-heading {
+    font-family: var(--font-poppins), sans-serif;
+  }
+
   .btn-primary {
     @apply bg-primary hover:bg-primary-dark text-white font-medium px-8 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg;
   }
