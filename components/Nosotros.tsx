@@ -1,9 +1,12 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 export default function Nosotros() {
+  const [expandedNosotros, setExpandedNosotros] = useState(false)
+  
   const services = [
     'Gastos médicos mayores para proteger tu salud y la de tus seres queridos.',
     'Planes personalizados para el retiro, para que puedas disfrutar de una vida plena y segura.',
@@ -75,7 +78,8 @@ export default function Nosotros() {
                 <div className="mt-8">
                   <h3 className="text-2xl font-bold text-white mb-6">Nuestros servicios incluyen:</h3>
                   <ul className="space-y-4">
-                    {services.map((service, index) => (
+                    {/* Always show first 3 items (up to "sus sueños") */}
+                    {services.slice(0, 3).map((service, index) => (
                       <motion.li
                         key={index}
                         initial={{ opacity: 0, x: -20 }}
@@ -88,7 +92,44 @@ export default function Nosotros() {
                         <span className="text-lg">{service}</span>
                       </motion.li>
                     ))}
+                    
+                    {/* Show remaining items when expanded */}
+                    {expandedNosotros && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                      >
+                        {services.slice(3).map((service, index) => (
+                          <motion.li
+                            key={index + 3}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="flex items-start gap-3 text-white"
+                          >
+                            <span className="text-2xl mt-1">•</span>
+                            <span className="text-lg">{service}</span>
+                          </motion.li>
+                        ))}
+                      </motion.div>
+                    )}
                   </ul>
+                  
+                  <button
+                    onClick={() => setExpandedNosotros(!expandedNosotros)}
+                    className="mt-6 text-white font-semibold hover:text-white/80 transition-colors flex items-center gap-2"
+                  >
+                    {expandedNosotros ? 'Leer menos' : 'Leer más'}
+                    <svg
+                      className={`w-4 h-4 transition-transform ${expandedNosotros ? 'rotate-180' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
                 </div>
 
                 {/* Philosophy */}
