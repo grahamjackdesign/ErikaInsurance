@@ -5,7 +5,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 185px; /* Fixed nav + CTA banner offset */
+    scroll-padding-top: 120px; /* Navigation + CTA banner height */
   }
   
   body {
@@ -14,7 +14,7 @@
 
   /* Ensure all sections with IDs respect the scroll offset */
   section[id] {
-    scroll-margin-top: 185px;
+    scroll-margin-top: 120px;
   }
 }
 
