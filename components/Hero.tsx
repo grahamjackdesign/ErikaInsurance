@@ -6,8 +6,8 @@ import Image from 'next/image'
 export default function Hero() {
   return (
     <section className="relative bg-white pt-20" style={{ minHeight: 'calc(100vh - 70px)' }}>
-      {/* Reduced bottom padding significantly and added larger negative margin to bring next section up */}
-      <div className="pt-8 pb-0" style={{ marginBottom: '-120px' }}>
+      {/* Increased negative margin to reduce overall hero height by 130px more */}
+      <div className="pt-8 pb-0" style={{ marginBottom: '-250px' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Text content */}

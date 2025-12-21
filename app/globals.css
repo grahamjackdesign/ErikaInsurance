@@ -5,7 +5,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 180px; /* Fixed nav + CTA banner + extra space */
+    scroll-padding-top: 5px; /* Reduced offset for anchor links */
   }
   
   body {
@@ -14,7 +14,7 @@
 
   /* Ensure all sections with IDs respect the scroll offset */
   section[id] {
-    scroll-margin-top: 180px;
+    scroll-margin-top: 5px;
   }
 }
 
