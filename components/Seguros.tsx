@@ -1073,32 +1073,38 @@ export default function Seguros() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="plan" className="block text-gray-700 font-medium mb-2">
-                        PLAN
+                        PLAN *
                       </label>
-                      <input
-                        type="text"
+                      <select
                         id="plan"
                         name="plan"
                         value={formData.plan}
                         onChange={handleChange}
+                        required
                         className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
-                        placeholder="Especifica el plan"
-                      />
+                      >
+                        <option value="">Selecciona un plan</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Familiar">Familiar</option>
+                      </select>
                     </div>
 
                     <div>
                       <label htmlFor="cobertura" className="block text-gray-700 font-medium mb-2">
-                        COBERTURA
+                        COBERTURA *
                       </label>
-                      <input
-                        type="text"
+                      <select
                         id="cobertura"
                         name="cobertura"
                         value={formData.cobertura}
                         onChange={handleChange}
+                        required
                         className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
-                        placeholder="Especifica la cobertura"
-                      />
+                      >
+                        <option value="">Selecciona cobertura</option>
+                        <option value="Nacional">Nacional</option>
+                        <option value="Internacional">Internacional</option>
+                      </select>
                     </div>
                   </div>
 
@@ -1156,17 +1162,23 @@ export default function Seguros() {
                   {/* ¿Padece alguna enfermedad? */}
                   <div>
                     <label htmlFor="enfermedad" className="block text-gray-700 font-medium mb-2">
-                      ¿PADECE ALGUNA ENFERMEDAD?
+                      ¿PADECE ALGUNA ENFERMEDAD? *
                     </label>
-                    <textarea
+                    <select
                       id="enfermedad"
                       name="enfermedad"
                       value={formData.enfermedad}
                       onChange={handleChange}
-                      rows={3}
+                      required
                       className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
-                      placeholder="Describe si padeces alguna enfermedad (opcional)"
-                    />
+                    >
+                      <option value="">Selecciona una opción</option>
+                      <option value="No">No</option>
+                      <option value="Diabetes">Diabetes</option>
+                      <option value="Hipertension">Hipertensión</option>
+                      <option value="Cancer">Cáncer</option>
+                      <option value="Otra">Otra</option>
+                    </select>
                   </div>
 
                   {/* Contacto Preferente */}
@@ -1176,38 +1188,40 @@ export default function Seguros() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="horario" className="block text-gray-700 font-medium mb-2">
-                          HORARIO
+                          HORARIO *
                         </label>
                         <select
                           id="horario"
                           name="horario"
                           value={formData.horario}
                           onChange={handleChange}
+                          required
                           className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
                         >
                           <option value="">Selecciona un horario</option>
-                          <option value="manana">Mañana (9:00 - 12:00)</option>
-                          <option value="tarde">Tarde (12:00 - 18:00)</option>
-                          <option value="noche">Noche (18:00 - 21:00)</option>
+                          <option value="9:00 a 12:00">9:00 a 12:00</option>
+                          <option value="12:00 a 14:00">12:00 a 14:00</option>
+                          <option value="14:00 a 16:00">14:00 a 16:00</option>
+                          <option value="16:00 a 18:00">16:00 a 18:00</option>
                         </select>
                       </div>
 
                       <div>
                         <label htmlFor="medio" className="block text-gray-700 font-medium mb-2">
-                          MEDIO
+                          MEDIO *
                         </label>
                         <select
                           id="medio"
                           name="medio"
                           value={formData.medio}
                           onChange={handleChange}
+                          required
                           className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
                         >
                           <option value="">Selecciona un medio</option>
-                          <option value="telefono">Teléfono</option>
-                          <option value="whatsapp">WhatsApp</option>
-                          <option value="email">Email</option>
-                          <option value="videollamada">Videollamada</option>
+                          <option value="Mail">Mail</option>
+                          <option value="Llamada">Llamada</option>
+                          <option value="WhatsApp">WhatsApp</option>
                         </select>
                       </div>
                     </div>
