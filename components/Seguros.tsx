@@ -233,7 +233,7 @@ export default function Seguros() {
   }
 
   return (
-    <section id="seguros" className="relative bg-white pt-8 pb-20">
+    <section id="seguros" className="relative pt-8 pb-20" style={{ backgroundColor: '#C5C5FF' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -800,15 +800,22 @@ export default function Seguros() {
                       <label htmlFor="auto-tipoSeguro" className="block text-gray-700 font-medium mb-2">
                         TIPO DE SEGURO
                       </label>
-                      <input
-                        type="text"
+                      <select
                         id="auto-tipoSeguro"
                         name="tipoSeguro"
                         value={autoFormData.tipoSeguro}
                         onChange={handleAutoChange}
                         className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
-                        placeholder="Tipo de seguro"
-                      />
+                      >
+                        <option value="">Selecciona</option>
+                        <option value="UBER">UBER</option>
+                        <option value="Vehículo Privado">Vehículo Privado</option>
+                        <option value="Vehículo de Carga">Vehículo de Carga</option>
+                        <option value="Motocicleta">Motocicleta</option>
+                        <option value="Vehículo de Servicio Público">Vehículo de Servicio Público</option>
+                        <option value="Vehículo de Salvamento">Vehículo de Salvamento</option>
+                        <option value="Vehículo Legalizado">Vehículo Legalizado</option>
+                      </select>
                     </div>
 
                     <div>
@@ -941,30 +948,37 @@ export default function Seguros() {
                       <label htmlFor="auto-formaPago" className="block text-gray-700 font-medium mb-2">
                         FORMA DE PAGO
                       </label>
-                      <input
-                        type="text"
+                      <select
                         id="auto-formaPago"
                         name="formaPago"
                         value={autoFormData.formaPago}
                         onChange={handleAutoChange}
                         className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
-                        placeholder="Forma de pago"
-                      />
+                      >
+                        <option value="">Selecciona</option>
+                        <option value="Mensual">Mensual</option>
+                        <option value="Trimestral">Trimestral</option>
+                        <option value="Semestral">Semestral</option>
+                        <option value="Anual">Anual</option>
+                      </select>
                     </div>
 
                     <div>
                       <label htmlFor="auto-cobertura" className="block text-gray-700 font-medium mb-2">
                         COBERTURA
                       </label>
-                      <input
-                        type="text"
+                      <select
                         id="auto-cobertura"
                         name="cobertura"
                         value={autoFormData.cobertura}
                         onChange={handleAutoChange}
                         className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
-                        placeholder="Cobertura"
-                      />
+                      >
+                        <option value="">Selecciona</option>
+                        <option value="Básica">Básica</option>
+                        <option value="Limitada">Limitada</option>
+                        <option value="Amplia">Amplia</option>
+                      </select>
                     </div>
                   </div>
 

@@ -154,7 +154,7 @@ export default function Ahorros() {
   }
 
   return (
-    <section id="ahorros" className="relative bg-white pt-4 pb-20">
+    <section id="ahorros" className="relative pt-4 pb-20" style={{ backgroundColor: '#C5C5FF' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -478,15 +478,22 @@ export default function Ahorros() {
                       <label htmlFor="retiro-metaAhorro" className="block text-gray-700 font-medium mb-2">
                         META DE AHORRO
                       </label>
-                      <input
-                        type="text"
+                      <select
                         id="retiro-metaAhorro"
                         name="metaAhorro"
                         value={retiroFormData.metaAhorro}
                         onChange={handleRetiroChange}
                         className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
-                        placeholder="Meta de ahorro"
-                      />
+                      >
+                        <option value="">Selecciona</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Viaje">Viaje</option>
+                        <option value="Boda">Boda</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Educacion">Educación</option>
+                        <option value="Automovil">Automóvil</option>
+                        <option value="Otro">Otro</option>
+                      </select>
                     </div>
                   </div>
 
@@ -496,45 +503,54 @@ export default function Ahorros() {
                       <label htmlFor="retiro-ahorroMensual" className="block text-gray-700 font-medium mb-2">
                         AHORRO MENSUAL
                       </label>
-                      <input
-                        type="text"
+                      <select
                         id="retiro-ahorroMensual"
                         name="ahorroMensual"
                         value={retiroFormData.ahorroMensual}
                         onChange={handleRetiroChange}
                         className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
-                        placeholder="Ahorro mensual"
-                      />
+                      >
+                        <option value="">Selecciona</option>
+                        <option value="$1,500 a $3,000">$1,500 a $3,000</option>
+                        <option value="$3,000 a $5,000">$3,000 a $5,000</option>
+                        <option value="$5,000+">$5,000+</option>
+                      </select>
                     </div>
 
                     <div>
                       <label htmlFor="retiro-rendimiento" className="block text-gray-700 font-medium mb-2">
                         RENDIMIENTO
                       </label>
-                      <input
-                        type="text"
+                      <select
                         id="retiro-rendimiento"
                         name="rendimiento"
                         value={retiroFormData.rendimiento}
                         onChange={handleRetiroChange}
                         className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
-                        placeholder="Rendimiento"
-                      />
+                      >
+                        <option value="">Selecciona</option>
+                        <option value="Medio (8 a 10 años)">Medio (8 a 10 años)</option>
+                        <option value="Alto (10 a 15 años)">Alto (10 a 15 años)</option>
+                        <option value="Muy Alto (20 años)">Muy Alto (20 años)</option>
+                      </select>
                     </div>
 
                     <div>
                       <label htmlFor="retiro-inversion" className="block text-gray-700 font-medium mb-2">
                         INVERSIÓN
                       </label>
-                      <input
-                        type="text"
+                      <select
                         id="retiro-inversion"
                         name="inversion"
                         value={retiroFormData.inversion}
                         onChange={handleRetiroChange}
                         className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
-                        placeholder="Inversión"
-                      />
+                      >
+                        <option value="">Selecciona</option>
+                        <option value="Estable">Estable</option>
+                        <option value="Poco riesgo">Poco riesgo</option>
+                        <option value="Alto riesgo">Alto riesgo</option>
+                      </select>
                     </div>
                   </div>
 

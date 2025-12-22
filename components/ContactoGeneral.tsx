@@ -66,7 +66,7 @@ export default function ContactoGeneral() {
   }
 
   return (
-    <section id="contacto" className="relative bg-gradient-to-b from-primary to-primary-dark pt-32 pb-20">
+    <section id="contacto" className="relative pt-32 pb-20" style={{ backgroundColor: '#C5C5FF' }}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -76,20 +76,20 @@ export default function ContactoGeneral() {
         >
           {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4">
               Contáctanos
             </h2>
-            <p className="text-xl text-white/90">
+            <p className="text-xl text-gray-700">
               ¿Tienes alguna pregunta? Escríbenos y te responderemos pronto
             </p>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12 space-y-6">
+          <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 lg:p-12 space-y-6 shadow-xl">
             {/* Nombre y Email */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="contacto-nombre" className="block text-white font-medium mb-2">
+                <label htmlFor="contacto-nombre" className="block text-gray-700 font-medium mb-2">
                   NOMBRE *
                 </label>
                 <input
@@ -99,13 +99,13 @@ export default function ContactoGeneral() {
                   value={formData.nombre}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-white/90 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
                   placeholder="Tu nombre"
                 />
               </div>
 
               <div>
-                <label htmlFor="contacto-email" className="block text-white font-medium mb-2">
+                <label htmlFor="contacto-email" className="block text-gray-700 font-medium mb-2">
                   EMAIL *
                 </label>
                 <input
@@ -115,7 +115,7 @@ export default function ContactoGeneral() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-white/90 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
                   placeholder="Tu email"
                 />
               </div>
@@ -123,7 +123,7 @@ export default function ContactoGeneral() {
 
             {/* Teléfono */}
             <div>
-              <label htmlFor="contacto-telefono" className="block text-white font-medium mb-2">
+              <label htmlFor="contacto-telefono" className="block text-gray-700 font-medium mb-2">
                 TELÉFONO *
               </label>
               <input
@@ -133,14 +133,14 @@ export default function ContactoGeneral() {
                 value={formData.telefono}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-lg bg-white/90 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
                 placeholder="Tu teléfono"
               />
             </div>
 
             {/* Mensaje */}
             <div>
-              <label htmlFor="contacto-mensaje" className="block text-white font-medium mb-2">
+              <label htmlFor="contacto-mensaje" className="block text-gray-700 font-medium mb-2">
                 MENSAJE *
               </label>
               <textarea
@@ -150,7 +150,7 @@ export default function ContactoGeneral() {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-3 rounded-lg bg-white/90 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
                 placeholder="Escríbenos tu mensaje"
               />
             </div>
@@ -164,8 +164,8 @@ export default function ContactoGeneral() {
                 whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 className={`w-full md:w-auto px-12 py-4 rounded-full font-bold text-lg transition-all duration-300 ${
                   isSubmitting
-                    ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-white text-primary hover:bg-gray-100 shadow-lg hover:shadow-xl'
+                    ? 'bg-gray-400 cursor-not-allowed text-white'
+                    : 'bg-primary text-white hover:bg-primary-dark shadow-lg hover:shadow-xl'
                 }`}
               >
                 {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
@@ -177,7 +177,7 @@ export default function ContactoGeneral() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mt-4 p-4 bg-white/20 rounded-lg text-white text-center font-medium"
+                className="mt-4 p-4 bg-primary/10 rounded-lg text-primary text-center font-medium"
               >
                 {submitMessage}
               </motion.div>

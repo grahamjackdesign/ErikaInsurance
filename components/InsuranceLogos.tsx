@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default function InsuranceLogos() {
   return (
-    <section className="relative bg-white py-16">
+    <section className="relative py-16" style={{ backgroundColor: '#C5C5FF' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
