@@ -483,29 +483,37 @@ export default function Seguros() {
                       </button>
                     </div>
 
-                    <div className="bg-primary-light/10 rounded-2xl p-6">
-                      <h4 className="text-xl font-bold text-primary mb-4">
-                        Ventajas de nuestro Seguro para Mascotas
-                      </h4>
-                      <ul className="space-y-3">
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Protección integral para tus mascotas</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Tranquilidad y seguridad para ti y tu familia</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Flexibilidad para adaptar la cobertura a tus necesidades y posibilidades</span>
-                        </li>
-                      </ul>
-                    </div>
+                    {expandedMascotas && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                      >
+                        <div className="bg-primary-light/10 rounded-2xl p-6">
+                          <h4 className="text-xl font-bold text-primary mb-4">
+                            Ventajas de nuestro Seguro para Mascotas
+                          </h4>
+                          <ul className="space-y-3">
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Protección integral para tus mascotas</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Tranquilidad y seguridad para ti y tu familia</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Flexibilidad para adaptar la cobertura a tus necesidades y posibilidades</span>
+                            </li>
+                          </ul>
+                        </div>
 
-                    <p className="text-lg leading-relaxed text-primary font-medium">
-                      ¡Contáctanos para saber más sobre cómo nuestro Seguro para Mascotas puede ayudarte a proteger a tus amigos peludos!
-                    </p>
+                        <p className="text-lg leading-relaxed text-primary font-medium mt-6">
+                          ¡Contáctanos para saber más sobre cómo nuestro Seguro para Mascotas puede ayudarte a proteger a tus amigos peludos!
+                        </p>
+                      </motion.div>
+                    )}
                   </div>
                 </>
               )}
@@ -602,25 +610,33 @@ export default function Seguros() {
                       </button>
                     </div>
 
-                    <div className="bg-primary-light/10 rounded-2xl p-6">
-                      <h4 className="text-xl font-bold text-primary mb-4">
-                        Ventajas de nuestra cobertura
-                      </h4>
-                      <ul className="space-y-3">
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Protección integral para tu vehículo y tus seres queridos</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Tranquilidad y seguridad en caso de accidente o imprevisto</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
-                          <span className="text-lg">Flexibilidad para adaptar la cobertura a tus necesidades y posibilidades</span>
-                        </li>
-                      </ul>
-                    </div>
+                    {expandedAutos && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                      >
+                        <div className="bg-primary-light/10 rounded-2xl p-6">
+                          <h4 className="text-xl font-bold text-primary mb-4">
+                            Ventajas de nuestra cobertura
+                          </h4>
+                          <ul className="space-y-3">
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Protección integral para tu vehículo y tus seres queridos</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Tranquilidad y seguridad en caso de accidente o imprevisto</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-dark">
+                              <span className="text-primary text-xl mt-1">•</span>
+                              <span className="text-lg">Flexibilidad para adaptar la cobertura a tus necesidades y posibilidades</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </motion.div>
+                    )}
                   </div>
                 </>
               )}

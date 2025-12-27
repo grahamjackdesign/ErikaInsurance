@@ -158,7 +158,7 @@ export default function Ahorros() {
   }
 
   return (
-    <section id="ahorros" className="relative pt-4 pb-20 -mt-[75px]" style={{ backgroundColor: '#C5C5FF' }}>
+    <section id="ahorros" className="relative pt-4 pb-20 -mt-[75px]" style={{ backgroundColor: '#7878ED' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -439,7 +439,7 @@ export default function Ahorros() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-12"
+              className="-mt-[63px]"
             >
               <div className="bg-primary-light/10 rounded-3xl p-8 lg:p-12">
                 <div className="text-center mb-8">
@@ -667,7 +667,7 @@ export default function Ahorros() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-12"
+              className="-mt-[63px]"
             >
               <div className="bg-primary-light/10 rounded-3xl p-8 lg:p-12">
                 <div className="text-center mb-8">
