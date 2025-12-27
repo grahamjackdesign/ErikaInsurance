@@ -66,7 +66,7 @@ export default function ContactoGeneral() {
   }
 
   return (
-    <section id="contacto" className="relative pt-0 pb-20 -mt-[180px]" style={{ backgroundColor: '#C5C5FF' }}>
+    <section id="contacto" className="relative pt-[100px] pb-[100px] -mt-[0px]" style={{ backgroundColor: '#C5C5FF' }}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
