@@ -159,118 +159,53 @@ export default function Ahorros() {
 
   return (
     <section id="ahorros" className="relative pt-[80px] pb-[100px] -mt-[75px] overflow-hidden" style={{ backgroundColor: '#7878ED' }}>
-      {/* Decorative 3/4 circles background */}
+      {/* Decorative circles background */}
       <div className="absolute inset-0 pointer-events-none opacity-30">
-        {/* Top left circle - 120px diameter, 15px stroke */}
+        {/* Top left circle - 120px diameter, 10px stroke */}
         <svg className="absolute top-10 left-10" width="120" height="120" viewBox="0 0 120 120">
           <circle
             cx="60"
             cy="60"
-            r="52.5"
+            r="55"
             fill="none"
             stroke="#DCDCF9"
-            strokeWidth="15"
-            strokeDasharray="235.62 78.54"
-            transform="rotate(-45 60 60)"
+            strokeWidth="10"
           />
         </svg>
 
-        {/* Top right circle - 100px diameter, 12px stroke */}
+        {/* Top right circle - 100px diameter, 10px stroke */}
         <svg className="absolute top-20 right-16" width="100" height="100" viewBox="0 0 100 100">
           <circle
             cx="50"
             cy="50"
-            r="44"
-            fill="none"
-            stroke="#DCDCF9"
-            strokeWidth="12"
-            strokeDasharray="207.35 69.12"
-            transform="rotate(45 50 50)"
-          />
-        </svg>
-
-        {/* Middle left circle - 150px diameter, 18px stroke */}
-        <svg className="absolute top-1/3 left-20" width="150" height="150" viewBox="0 0 150 150">
-          <circle
-            cx="75"
-            cy="75"
-            r="66"
-            fill="none"
-            stroke="#DCDCF9"
-            strokeWidth="18"
-            strokeDasharray="311.02 103.67"
-            transform="rotate(135 75 75)"
-          />
-        </svg>
-
-        {/* Middle right circle - 90px diameter, 14px stroke */}
-        <svg className="absolute top-1/2 right-24" width="90" height="90" viewBox="0 0 90 90">
-          <circle
-            cx="45"
-            cy="45"
-            r="38"
-            fill="none"
-            stroke="#DCDCF9"
-            strokeWidth="14"
-            strokeDasharray="179.07 59.69"
-            transform="rotate(-90 45 45)"
-          />
-        </svg>
-
-        {/* Bottom left circle - 110px diameter, 16px stroke */}
-        <svg className="absolute bottom-32 left-16" width="110" height="110" viewBox="0 0 110 110">
-          <circle
-            cx="55"
-            cy="55"
-            r="47"
-            fill="none"
-            stroke="#DCDCF9"
-            strokeWidth="16"
-            strokeDasharray="221.67 73.89"
-            transform="rotate(90 55 55)"
-          />
-        </svg>
-
-        {/* Bottom right circle - 130px diameter, 20px stroke */}
-        <svg className="absolute bottom-20 right-12" width="130" height="130" viewBox="0 0 130 130">
-          <circle
-            cx="65"
-            cy="65"
-            r="55"
-            fill="none"
-            stroke="#DCDCF9"
-            strokeWidth="20"
-            strokeDasharray="259.18 86.39"
-            transform="rotate(180 65 65)"
-          />
-        </svg>
-
-        {/* Additional center circles for better distribution */}
-        {/* Center top circle - 85px diameter, 10px stroke */}
-        <svg className="absolute top-24 left-1/2 -translate-x-1/2" width="85" height="85" viewBox="0 0 85 85">
-          <circle
-            cx="42.5"
-            cy="42.5"
-            r="37.5"
+            r="45"
             fill="none"
             stroke="#DCDCF9"
             strokeWidth="10"
-            strokeDasharray="176.71 58.90"
-            transform="rotate(-135 42.5 42.5)"
           />
         </svg>
 
-        {/* Bottom center circle - 95px diameter, 12px stroke */}
-        <svg className="absolute bottom-28 left-1/3" width="95" height="95" viewBox="0 0 95 95">
+        {/* Bottom left circle - 150px diameter, 10px stroke */}
+        <svg className="absolute bottom-24 left-20" width="150" height="150" viewBox="0 0 150 150">
           <circle
-            cx="47.5"
-            cy="47.5"
-            r="41.5"
+            cx="75"
+            cy="75"
+            r="70"
             fill="none"
             stroke="#DCDCF9"
-            strokeWidth="12"
-            strokeDasharray="195.48 65.16"
-            transform="rotate(225 47.5 47.5)"
+            strokeWidth="10"
+          />
+        </svg>
+
+        {/* Bottom right circle - 110px diameter, 10px stroke */}
+        <svg className="absolute bottom-16 right-12" width="110" height="110" viewBox="0 0 110 110">
+          <circle
+            cx="55"
+            cy="55"
+            r="50"
+            fill="none"
+            stroke="#DCDCF9"
+            strokeWidth="10"
           />
         </svg>
       </div>
