@@ -17,9 +17,15 @@ export default function Hero() {
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
-              {/* Purple decorative bar */}
-              <div className="flex items-center gap-6">
-                <div className="w-2 h-24 bg-primary rounded-full"></div>
+              {/* Purple decorative bar - replaced with image */}
+              <div className="flex items-center gap-5">
+                <Image
+                  src="/images/purple_bar.png"
+                  alt=""
+                  width={8}
+                  height={96}
+                  className="h-24 w-auto"
+                />
                 <div className="pt-10">
                   <h1 className="text-4xl lg:text-5xl font-bold text-primary leading-tight font-heading" style={{ fontWeight: 700, letterSpacing: '-0.02em' }}>
                     Asesor Patrimonial y<br />Financiero
