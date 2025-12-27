@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="relative bg-white pt-20 pb-36">
+    <section className="relative bg-[#DCDCF9] pt-20 pb-0">
       {/* Added pb-36 (144px) to increase hero height */}
       <div className="pt-8 pb-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,7 +57,7 @@ export default function Hero() {
             >
               <div className="relative w-full max-w-md mx-auto">
                 <Image
-                  src="/images/erika-header.png"
+                  src="/images/erika-headerfoto.png"
                   alt="Erika Echevarri"
                   width={600}
                   height={600}
@@ -69,9 +69,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Solid purple bottom section - reduced height */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-primary"></div>
     </section>
   )
 }

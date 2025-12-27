@@ -49,7 +49,7 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="space-y-4">
             <Image
-              src="/images/logoerika.png"
+              src="/images/ERIKA-footerpng.png"
               alt="Erika Echevarri"
               width={150}
               height={60}
