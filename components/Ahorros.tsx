@@ -158,7 +158,7 @@ export default function Ahorros() {
   }
 
   return (
-    <section id="ahorros" className="relative pt-4 pb-20 -mt-[75px]" style={{ backgroundColor: '#7878ED' }}>
+    <section id="ahorros" className="relative pt-0 pb-20 -mt-[75px]" style={{ backgroundColor: '#7878ED' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -169,7 +169,7 @@ export default function Ahorros() {
         >
           {/* Header */}
           <div className="text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-8">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
               Planes de Ahorro
             </h2>
           </div>
@@ -183,7 +183,7 @@ export default function Ahorros() {
               className={`p-6 rounded-2xl transition-all duration-300 ${
                 activeTab === 'retiro'
                   ? 'bg-primary text-white shadow-xl'
-                  : 'bg-primary-light/20 text-gray-dark hover:bg-primary-light/40'
+                  : 'bg-primary-light/20 text-white hover:bg-primary-light/40'
               }`}
             >
               <h3 className="text-xl font-bold">Planes de Retiro</h3>
@@ -196,7 +196,7 @@ export default function Ahorros() {
               className={`p-6 rounded-2xl transition-all duration-300 ${
                 activeTab === 'universidad'
                   ? 'bg-primary text-white shadow-xl'
-                  : 'bg-primary-light/20 text-gray-dark hover:bg-primary-light/40'
+                  : 'bg-primary-light/20 text-white hover:bg-primary-light/40'
               }`}
             >
               <h3 className="text-xl font-bold">Planes de Universidad</h3>
@@ -244,7 +244,7 @@ export default function Ahorros() {
               {activeTab === 'retiro' && (
                 <>
                   <div className="space-y-4">
-                    <p className="text-lg leading-relaxed text-gray-dark">
+                    <p className="text-lg leading-relaxed text-white">
                       Nuestro seguro de Retiro es una solución integral que te brinda protección y ahorro para tu futuro. 
                       Con este seguro, obtienes un respaldo en un seguro de vida y al mismo tiempo, puedes ahorrar de 
                       acuerdo con tus posibilidades y obtener rendimientos.
@@ -252,15 +252,15 @@ export default function Ahorros() {
                   </div>
 
                   <div className="bg-primary-light/20 rounded-2xl p-6">
-                    <h4 className="text-xl font-bold text-primary mb-4">
+                    <h4 className="text-xl font-bold text-white mb-4">
                       BENEFICIOS CLAVE:
                     </h4>
                     <div className="space-y-4">
-                      <p className="text-lg text-gray-dark">
+                      <p className="text-lg text-white">
                         Protege el bienestar económico de tus seres queridos en caso de fallecimiento, invalidez o 
                         incapacidad total o permanente.
                       </p>
-                      <p className="text-lg text-gray-dark">
+                      <p className="text-lg text-white">
                         Recibe la suma asegurada en caso de fallecimiento, para que tus beneficiarios estén protegidos.
                       </p>
                       
@@ -271,24 +271,24 @@ export default function Ahorros() {
                           animate={{ opacity: 1, height: 'auto' }}
                           exit={{ opacity: 0, height: 0 }}
                         >
-                          <p className="text-lg font-medium text-gray-dark">
+                          <p className="text-lg font-medium text-white">
                             Aprovecha los beneficios fiscales:
                           </p>
                           <ul className="space-y-3">
-                            <li className="flex items-start gap-3 text-gray-dark">
-                              <span className="text-primary text-xl mt-1">•</span>
+                            <li className="flex items-start gap-3 text-white">
+                              <span className="text-white text-xl mt-1">•</span>
                               <span className="text-lg">Deducción de impuestos.</span>
                             </li>
-                            <li className="flex items-start gap-3 text-gray-dark">
-                              <span className="text-primary text-xl mt-1">•</span>
+                            <li className="flex items-start gap-3 text-white">
+                              <span className="text-white text-xl mt-1">•</span>
                               <span className="text-lg">Tu dinero irá creciendo año con año.</span>
                             </li>
-                            <li className="flex items-start gap-3 text-gray-dark">
-                              <span className="text-primary text-xl mt-1">•</span>
+                            <li className="flex items-start gap-3 text-white">
+                              <span className="text-white text-xl mt-1">•</span>
                               <span className="text-lg">Protegemos tu dinero para que no pierda valor en el tiempo.</span>
                             </li>
-                            <li className="flex items-start gap-3 text-gray-dark">
-                              <span className="text-primary text-xl mt-1">•</span>
+                            <li className="flex items-start gap-3 text-white">
+                              <span className="text-white text-xl mt-1">•</span>
                               <span className="text-lg">Plan flexible que te permite hacer aportaciones adicionales.</span>
                             </li>
                           </ul>
@@ -297,7 +297,7 @@ export default function Ahorros() {
                       
                       <button
                         onClick={() => setExpandedRetiro(!expandedRetiro)}
-                        className="text-primary font-semibold hover:text-primary-dark transition-colors flex items-center gap-2"
+                        className="text-white font-semibold hover:text-white/80 transition-colors flex items-center gap-2"
                       >
                         {expandedRetiro ? 'Leer menos' : 'Leer más'}
                         <svg
@@ -319,26 +319,26 @@ export default function Ahorros() {
                       exit={{ opacity: 0, height: 0 }}
                     >
                       <div className="bg-primary-light/10 rounded-2xl p-6">
-                        <h4 className="text-xl font-bold text-primary mb-4">
+                        <h4 className="text-xl font-bold text-white mb-4">
                           VENTAJAS DE NUESTRO SEGURO DE RETIRO:
                         </h4>
                         <ul className="space-y-3">
-                          <li className="flex items-start gap-3 text-gray-dark">
-                            <span className="text-primary text-xl mt-1">•</span>
+                          <li className="flex items-start gap-3 text-white">
+                            <span className="text-white text-xl mt-1">•</span>
                             <span className="text-lg">Tranquilidad y seguridad para ti y tus seres queridos.</span>
                           </li>
-                          <li className="flex items-start gap-3 text-gray-dark">
-                            <span className="text-primary text-xl mt-1">•</span>
+                          <li className="flex items-start gap-3 text-white">
+                            <span className="text-white text-xl mt-1">•</span>
                             <span className="text-lg">Ahorro y protección para un futuro sin preocupaciones.</span>
                           </li>
-                          <li className="flex items-start gap-3 text-gray-dark">
-                            <span className="text-primary text-xl mt-1">•</span>
+                          <li className="flex items-start gap-3 text-white">
+                            <span className="text-white text-xl mt-1">•</span>
                             <span className="text-lg">Flexibilidad para adaptar el plan a tus metas y necesidades y posibilidades.</span>
                           </li>
                         </ul>
                       </div>
 
-                      <p className="text-lg leading-relaxed text-primary font-medium">
+                      <p className="text-lg leading-relaxed text-white font-medium">
                         Invierte en tu retiro con nuestros Plan Personalizados para el Retiro. Ahorra hoy y disfruta de un 
                         retiro tranquilo y seguro, ¡protege tu estilo de vida!
                       </p>
@@ -350,38 +350,38 @@ export default function Ahorros() {
               {activeTab === 'universidad' && (
                 <>
                   <div className="space-y-6">
-                    <p className="text-lg leading-relaxed text-gray-dark">
+                    <p className="text-lg leading-relaxed text-white">
                       Ayuda a asegurar el futuro educativo de tu hijo con nuestro Seguro de Educación Universitaria. 
                       Este plan te permite ahorrar y administrar un capital económico para que tu hijo pueda alcanzar 
                       sus metas académicas.
                     </p>
 
                     <div className="bg-primary-light/20 rounded-2xl p-6">
-                      <h4 className="text-xl font-bold text-primary mb-4">
+                      <h4 className="text-xl font-bold text-white mb-4">
                         Beneficios clave:
                       </h4>
                       <ul className="space-y-3">
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
+                        <li className="flex items-start gap-3 text-white">
+                          <span className="text-white text-xl mt-1">•</span>
                           <span className="text-lg">Ahorro garantizado para la universidad de tu hijo</span>
                         </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
+                        <li className="flex items-start gap-3 text-white">
+                          <span className="text-white text-xl mt-1">•</span>
                           <span className="text-lg">Opción de administrar el ahorro para que tu hijo reciba un ingreso constante a partir de los 18 años</span>
                         </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
+                        <li className="flex items-start gap-3 text-white">
+                          <span className="text-white text-xl mt-1">•</span>
                           <span className="text-lg">Rendimientos generados por el ahorro, sin costo adicional</span>
                         </li>
-                        <li className="flex items-start gap-3 text-gray-dark">
-                          <span className="text-primary text-xl mt-1">•</span>
+                        <li className="flex items-start gap-3 text-white">
+                          <span className="text-white text-xl mt-1">•</span>
                           <span className="text-lg">Tranquilidad de saber que tu hijo tendrá un futuro educativo asegurado</span>
                         </li>
                       </ul>
                       
                       <button
                         onClick={() => setExpandedUniversidad(!expandedUniversidad)}
-                        className="mt-4 text-primary font-semibold hover:text-primary-dark transition-colors flex items-center gap-2"
+                        className="mt-4 text-white font-semibold hover:text-white/80 transition-colors flex items-center gap-2"
                       >
                         {expandedUniversidad ? 'Leer menos' : 'Leer más'}
                         <svg
@@ -402,26 +402,26 @@ export default function Ahorros() {
                         exit={{ opacity: 0, height: 0 }}
                       >
                         <div className="bg-primary-light/10 rounded-2xl p-6">
-                          <h4 className="text-xl font-bold text-primary mb-4">
+                          <h4 className="text-xl font-bold text-white mb-4">
                             Ventajas de nuestro Seguro de Educación Universitaria:
                           </h4>
                           <ul className="space-y-3">
-                            <li className="flex items-start gap-3 text-gray-dark">
-                              <span className="text-primary text-xl mt-1">•</span>
+                            <li className="flex items-start gap-3 text-white">
+                              <span className="text-white text-xl mt-1">•</span>
                               <span className="text-lg">Ayuda a tu hijo a alcanzar sus metas académicas</span>
                             </li>
-                            <li className="flex items-start gap-3 text-gray-dark">
-                              <span className="text-primary text-xl mt-1">•</span>
+                            <li className="flex items-start gap-3 text-white">
+                              <span className="text-white text-xl mt-1">•</span>
                               <span className="text-lg">Ahorro seguro y rentable</span>
                             </li>
-                            <li className="flex items-start gap-3 text-gray-dark">
-                              <span className="text-primary text-xl mt-1">•</span>
+                            <li className="flex items-start gap-3 text-white">
+                              <span className="text-white text-xl mt-1">•</span>
                               <span className="text-lg">Flexibilidad para adaptar el plan a tus necesidades y posibilidades</span>
                             </li>
                           </ul>
                         </div>
 
-                        <p className="text-lg leading-relaxed text-primary font-medium">
+                        <p className="text-lg leading-relaxed text-white font-medium">
                           Prepara a tus hijos para un futuro brillante con nuestro seguro universitario. Ahorra y protege 
                           su educación. ¡Dales la mejor oportunidad!
                         </p>
@@ -651,7 +651,7 @@ export default function Ahorros() {
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="mt-4 p-4 bg-primary/10 rounded-lg text-primary text-center font-medium"
+                      className="mt-4 p-4 bg-primary/10 rounded-lg text-white text-center font-medium"
                     >
                       {retiroSubmitMessage}
                     </motion.div>
@@ -879,7 +879,7 @@ export default function Ahorros() {
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="mt-4 p-4 bg-primary/10 rounded-lg text-primary text-center font-medium"
+                      className="mt-4 p-4 bg-primary/10 rounded-lg text-white text-center font-medium"
                     >
                       {universidadSubmitMessage}
                     </motion.div>
