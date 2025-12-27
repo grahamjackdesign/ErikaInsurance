@@ -24,7 +24,7 @@ export default function Hero() {
                   alt=""
                   width={8}
                   height={96}
-                  className="h-24 w-auto"
+                  className="h-24 w-auto relative top-[15px]"
                 />
                 <div className="pt-10">
                   <h1 className="text-4xl lg:text-5xl font-bold text-primary leading-tight font-heading" style={{ fontWeight: 700, letterSpacing: '-0.02em' }}>
