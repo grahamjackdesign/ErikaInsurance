@@ -158,7 +158,7 @@ export default function Ahorros() {
   }
 
   return (
-    <section id="ahorros" className="relative pt-0 pb-100 mt-[75px]" style={{ backgroundColor: '#7878ED' }}>
+    <section id="ahorros" className="relative pt-[100px] pb-[100px] -mt-[75px]" style={{ backgroundColor: '#7878ED' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
