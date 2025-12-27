@@ -53,7 +53,7 @@ export default function Footer() {
               alt="Erika Echevarri"
               width={150}
               height={60}
-              className="h-[60px] w-auto brightness-0 invert"
+              className="h-[60px] w-auto"
             />
             <p className="text-gray-400 text-sm">
               Asesor Patrimonial y Financiero. Tu tranquilidad, mi prioridad.
@@ -81,7 +81,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">Contacto</h3>
             <div className="space-y-2 text-gray-400 text-sm mb-6">
-              <p>Email: contacto@erikaechevarri.com</p>
+              <p>Email: erika.olivos.sm@gmail.com</p>
               <p>Teléfono: +52 552 661 9640</p>
             </div>
             
