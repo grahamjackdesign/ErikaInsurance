@@ -158,7 +158,7 @@ export default function Ahorros() {
   }
 
   return (
-    <section id="ahorros" className="relative pt-[100px] pb-[180px] -mt-[75px]" style={{ backgroundColor: '#7878ED' }}>
+    <section id="ahorros" className="relative pt-[80px] pb-[180px] -mt-[75px]" style={{ backgroundColor: '#7878ED' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -318,7 +318,7 @@ export default function Ahorros() {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                     >
-                      <div className="bg-primary-light/10 rounded-2xl p-6">
+                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
                         <h4 className="text-xl font-bold text-white mb-4">
                           VENTAJAS DE NUESTRO SEGURO DE RETIRO:
                         </h4>
@@ -401,7 +401,7 @@ export default function Ahorros() {
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                       >
-                        <div className="bg-primary-light/10 rounded-2xl p-6">
+                        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
                           <h4 className="text-xl font-bold text-white mb-4">
                             Ventajas de nuestro Seguro de Educación Universitaria:
                           </h4>
@@ -441,9 +441,9 @@ export default function Ahorros() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="-mt-[63px]"
             >
-              <div className="bg-primary-light/10 rounded-3xl p-8 lg:p-12">
+              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12">
                 <div className="text-center mb-8">
-                  <h3 className="text-3xl font-bold text-primary mb-2">
+                  <h3 className="text-3xl font-bold text-white mb-2">
                     Solicita una Cotización:
                   </h3>
                 </div>
@@ -452,7 +452,7 @@ export default function Ahorros() {
                   {/* Nombre, Email, Teléfono */}
                   <div className="grid md:grid-cols-3 gap-6">
                     <div>
-                      <label htmlFor="retiro-nombre" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="retiro-nombre" className="block text-white font-medium mb-2">
                         NOMBRE *
                       </label>
                       <input
@@ -468,7 +468,7 @@ export default function Ahorros() {
                     </div>
 
                     <div>
-                      <label htmlFor="retiro-email" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="retiro-email" className="block text-white font-medium mb-2">
                         E MAIL *
                       </label>
                       <input
@@ -484,7 +484,7 @@ export default function Ahorros() {
                     </div>
 
                     <div>
-                      <label htmlFor="retiro-telefono" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="retiro-telefono" className="block text-white font-medium mb-2">
                         TELÉFONO *
                       </label>
                       <input
@@ -503,7 +503,7 @@ export default function Ahorros() {
                   {/* Edad, Fumador, Meta de Ahorro */}
                   <div className="grid md:grid-cols-3 gap-6">
                     <div>
-                      <label htmlFor="retiro-edad" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="retiro-edad" className="block text-white font-medium mb-2">
                         EDAD
                       </label>
                       <input
@@ -518,7 +518,7 @@ export default function Ahorros() {
                     </div>
 
                     <div>
-                      <label htmlFor="retiro-fumador" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="retiro-fumador" className="block text-white font-medium mb-2">
                         FUMADOR
                       </label>
                       <select
@@ -535,7 +535,7 @@ export default function Ahorros() {
                     </div>
 
                     <div>
-                      <label htmlFor="retiro-metaAhorro" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="retiro-metaAhorro" className="block text-white font-medium mb-2">
                         META DE AHORRO
                       </label>
                       <select
@@ -560,7 +560,7 @@ export default function Ahorros() {
                   {/* Ahorro Mensual, Rendimiento, Inversión */}
                   <div className="grid md:grid-cols-3 gap-6">
                     <div>
-                      <label htmlFor="retiro-ahorroMensual" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="retiro-ahorroMensual" className="block text-white font-medium mb-2">
                         AHORRO MENSUAL
                       </label>
                       <select
@@ -578,7 +578,7 @@ export default function Ahorros() {
                     </div>
 
                     <div>
-                      <label htmlFor="retiro-rendimiento" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="retiro-rendimiento" className="block text-white font-medium mb-2">
                         RENDIMIENTO
                       </label>
                       <select
@@ -596,7 +596,7 @@ export default function Ahorros() {
                     </div>
 
                     <div>
-                      <label htmlFor="retiro-inversion" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="retiro-inversion" className="block text-white font-medium mb-2">
                         INVERSIÓN
                       </label>
                       <select
@@ -616,7 +616,7 @@ export default function Ahorros() {
 
                   {/* Mensaje */}
                   <div>
-                    <label htmlFor="retiro-mensaje" className="block text-gray-700 font-medium mb-2">
+                    <label htmlFor="retiro-mensaje" className="block text-white font-medium mb-2">
                       MENSAJE
                     </label>
                     <textarea
@@ -669,9 +669,9 @@ export default function Ahorros() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="-mt-[63px]"
             >
-              <div className="bg-primary-light/10 rounded-3xl p-8 lg:p-12">
+              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12">
                 <div className="text-center mb-8">
-                  <h3 className="text-3xl font-bold text-primary mb-2">
+                  <h3 className="text-3xl font-bold text-white mb-2">
                     Solicita una Cotización:
                   </h3>
                 </div>
@@ -680,7 +680,7 @@ export default function Ahorros() {
                   {/* Nombre, Email, Teléfono */}
                   <div className="grid md:grid-cols-3 gap-6">
                     <div>
-                      <label htmlFor="universidad-nombre" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="universidad-nombre" className="block text-white font-medium mb-2">
                         NOMBRE *
                       </label>
                       <input
@@ -696,7 +696,7 @@ export default function Ahorros() {
                     </div>
 
                     <div>
-                      <label htmlFor="universidad-email" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="universidad-email" className="block text-white font-medium mb-2">
                         E MAIL *
                       </label>
                       <input
@@ -712,7 +712,7 @@ export default function Ahorros() {
                     </div>
 
                     <div>
-                      <label htmlFor="universidad-telefono" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="universidad-telefono" className="block text-white font-medium mb-2">
                         TELÉFONO *
                       </label>
                       <input
@@ -731,7 +731,7 @@ export default function Ahorros() {
                   {/* Edad, Fumador, Meta de Ahorro */}
                   <div className="grid md:grid-cols-3 gap-6">
                     <div>
-                      <label htmlFor="universidad-edad" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="universidad-edad" className="block text-white font-medium mb-2">
                         EDAD
                       </label>
                       <input
@@ -746,7 +746,7 @@ export default function Ahorros() {
                     </div>
 
                     <div>
-                      <label htmlFor="universidad-fumador" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="universidad-fumador" className="block text-white font-medium mb-2">
                         FUMADOR
                       </label>
                       <select
@@ -763,7 +763,7 @@ export default function Ahorros() {
                     </div>
 
                     <div>
-                      <label htmlFor="universidad-metaAhorro" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="universidad-metaAhorro" className="block text-white font-medium mb-2">
                         META DE AHORRO
                       </label>
                       <select
@@ -788,7 +788,7 @@ export default function Ahorros() {
                   {/* Ahorro Mensual, Rendimiento, Inversión */}
                   <div className="grid md:grid-cols-3 gap-6">
                     <div>
-                      <label htmlFor="universidad-ahorroMensual" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="universidad-ahorroMensual" className="block text-white font-medium mb-2">
                         AHORRO MENSUAL
                       </label>
                       <select
@@ -806,7 +806,7 @@ export default function Ahorros() {
                     </div>
 
                     <div>
-                      <label htmlFor="universidad-rendimiento" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="universidad-rendimiento" className="block text-white font-medium mb-2">
                         RENDIMIENTO
                       </label>
                       <select
@@ -824,7 +824,7 @@ export default function Ahorros() {
                     </div>
 
                     <div>
-                      <label htmlFor="universidad-inversion" className="block text-gray-700 font-medium mb-2">
+                      <label htmlFor="universidad-inversion" className="block text-white font-medium mb-2">
                         INVERSIÓN
                       </label>
                       <select
@@ -844,7 +844,7 @@ export default function Ahorros() {
 
                   {/* Mensaje */}
                   <div>
-                    <label htmlFor="universidad-mensaje" className="block text-gray-700 font-medium mb-2">
+                    <label htmlFor="universidad-mensaje" className="block text-white font-medium mb-2">
                       MENSAJE
                     </label>
                     <textarea
