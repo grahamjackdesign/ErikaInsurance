@@ -85,16 +85,13 @@ export default function Footer() {
             <h4 className="text-sm font-semibold mb-3">Síguenos</h4>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
-                <a
+                <div
                   key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary transition-colors duration-200"
+                  className="text-gray-400 cursor-default"
                   aria-label={social.name}
                 >
                   {social.icon}
-                </a>
+                </div>
               ))}
             </div>
           </div>
