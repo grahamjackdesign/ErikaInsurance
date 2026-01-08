@@ -16,11 +16,11 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Erika Echevarri - Asesor Patrimonial y Financiero',
+  title: 'Erika Echavarri - Asesor Patrimonial y Financiero',
   description: 'Especialista en Planificación Patrimonial y Financiero. Protege tu salud y patrimonio con seguros de gastos médicos, autos, mascotas, planes de retiro y ahorro.',
   keywords: 'seguros, gastos médicos, seguro de autos, seguro de mascotas, planes de retiro, ahorro, inversiones, México',
   openGraph: {
-    title: 'Erika Echevarri - Asesor Patrimonial y Financiero',
+    title: 'Erika Echavarri - Asesor Patrimonial y Financiero',
     description: 'Especialista en Planificación Patrimonial y Financiero',
     type: 'website',
     locale: 'es_MX',

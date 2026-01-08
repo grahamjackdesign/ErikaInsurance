@@ -2,8 +2,8 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'Términos y Condiciones - Erika Echevarri',
-  description: 'Términos y condiciones de uso del sitio web de Erika Echevarri - Asesor Patrimonial y Financiero',
+  title: 'Términos y Condiciones - Erika Echavarri',
+  description: 'Términos y condiciones de uso del sitio web de Erika Echavarri - Asesor Patrimonial y Financiero',
 }
 
 export default function TerminosCondiciones() {
@@ -28,7 +28,7 @@ export default function TerminosCondiciones() {
             <section className="space-y-4">
               <h2 className="text-2xl font-bold text-primary mt-8">2. Servicios Ofrecidos</h2>
               <p>
-                Erika Echevarri ofrece servicios de asesoría patrimonial y financiera, incluyendo pero no limitándose a:
+                Erika Echavarri ofrece servicios de asesoría patrimonial y financiera, incluyendo pero no limitándose a:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>Seguros de gastos médicos mayores</li>
@@ -54,7 +54,7 @@ export default function TerminosCondiciones() {
               <h2 className="text-2xl font-bold text-primary mt-8">4. Propiedad Intelectual</h2>
               <p>
                 Todo el contenido de este sitio web, incluyendo textos, gráficos, logos, imágenes y software, 
-                es propiedad de Erika Echevarri o sus proveedores de contenido y está protegido por las leyes 
+                es propiedad de Erika Echavarri o sus proveedores de contenido y está protegido por las leyes 
                 de propiedad intelectual de México.
               </p>
             </section>
@@ -63,7 +63,7 @@ export default function TerminosCondiciones() {
               <h2 className="text-2xl font-bold text-primary mt-8">5. Limitación de Responsabilidad</h2>
               <p>
                 La información proporcionada en este sitio web es de carácter general y no constituye asesoramiento 
-                financiero personalizado. Erika Echevarri no se hace responsable por decisiones tomadas basándose 
+                financiero personalizado. Erika Echavarri no se hace responsable por decisiones tomadas basándose 
                 únicamente en la información de este sitio web.
               </p>
             </section>
@@ -71,7 +71,7 @@ export default function TerminosCondiciones() {
             <section className="space-y-4">
               <h2 className="text-2xl font-bold text-primary mt-8">6. Enlaces a Terceros</h2>
               <p>
-                Este sitio web puede contener enlaces a sitios web de terceros. Erika Echevarri no es responsable 
+                Este sitio web puede contener enlaces a sitios web de terceros. Erika Echavarri no es responsable 
                 del contenido de dichos sitios web externos.
               </p>
             </section>
@@ -79,7 +79,7 @@ export default function TerminosCondiciones() {
             <section className="space-y-4">
               <h2 className="text-2xl font-bold text-primary mt-8">7. Modificaciones</h2>
               <p>
-                Erika Echevarri se reserva el derecho de modificar estos términos y condiciones en cualquier momento. 
+                Erika Echavarri se reserva el derecho de modificar estos términos y condiciones en cualquier momento. 
                 Los cambios serán efectivos inmediatamente después de su publicación en el sitio web.
               </p>
             </section>
@@ -98,7 +98,7 @@ export default function TerminosCondiciones() {
                 Si tiene alguna pregunta sobre estos términos y condiciones, puede contactarnos a través de:
               </p>
               <ul className="list-none space-y-2 ml-4">
-                <li><strong>Email:</strong> contacto@erikaechevarri.com</li>
+                <li><strong>Email:</strong> contacto@erikaechavarri.com</li>
                 <li><strong>Teléfono:</strong> +52 123 456 7890</li>
               </ul>
             </section>

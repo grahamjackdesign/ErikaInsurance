@@ -23,7 +23,7 @@ export default function Navigation() {
             <a href="/" className="block">
               <Image
                 src="/images/logoerika.png"
-                alt="Erika Echevarri - Asesor Patrimonial"
+                alt="Erika Echavarri - Asesor Patrimonial"
                 width={200}
                 height={75}
                 className="h-[75px] w-auto"

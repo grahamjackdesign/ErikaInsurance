@@ -64,7 +64,7 @@ export default function Hero() {
               <div className="relative w-full max-w-md mx-auto">
                 <Image
                   src="/images/erika-headerfoto.png"
-                  alt="Erika Echevarri"
+                  alt="Erika Echavarri"
                   width={600}
                   height={600}
                   className="w-full h-auto"

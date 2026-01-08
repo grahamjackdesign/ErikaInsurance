@@ -47,7 +47,7 @@ export default function Footer() {
           <div className="space-y-4">
             <Image
               src="/images/ERIKA-footerpng.png"
-              alt="Erika Echevarri"
+              alt="Erika Echavarri"
               width={150}
               height={60}
               className="h-[60px] w-auto"
@@ -100,7 +100,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
-            <p>&copy; {currentYear} Erika Echevarri. Todos los derechos reservados.</p>
+            <p>&copy; {currentYear} Erika Echavarri. Todos los derechos reservados.</p>
             <div className="flex gap-6">
               <a href="/terminos-condiciones" className="hover:text-white transition-colors">
                 Términos y Condiciones

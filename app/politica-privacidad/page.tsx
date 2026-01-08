@@ -2,8 +2,8 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'Política de Privacidad - Erika Echevarri',
-  description: 'Política de privacidad y protección de datos personales de Erika Echevarri - Asesor Patrimonial y Financiero',
+  title: 'Política de Privacidad - Erika Echavarri',
+  description: 'Política de privacidad y protección de datos personales de Erika Echavarri - Asesor Patrimonial y Financiero',
 }
 
 export default function PoliticaPrivacidad() {
@@ -20,7 +20,7 @@ export default function PoliticaPrivacidad() {
             <section className="space-y-4">
               <h2 className="text-2xl font-bold text-primary mt-8">1. Introducción</h2>
               <p>
-                Erika Echevarri se compromete a proteger su privacidad y sus datos personales. Esta política de 
+                Erika Echavarri se compromete a proteger su privacidad y sus datos personales. Esta política de 
                 privacidad explica cómo recopilamos, usamos, compartimos y protegemos su información personal 
                 de acuerdo con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
               </p>
@@ -126,7 +126,7 @@ export default function PoliticaPrivacidad() {
                 puede contactarnos a través de:
               </p>
               <ul className="list-none space-y-2 ml-4">
-                <li><strong>Email:</strong> contacto@erikaechevarri.com</li>
+                <li><strong>Email:</strong> contacto@erikaechavarri.com</li>
                 <li><strong>Teléfono:</strong> +52 123 456 7890</li>
               </ul>
             </section>

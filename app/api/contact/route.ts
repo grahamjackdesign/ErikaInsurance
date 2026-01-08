@@ -121,7 +121,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     await resend.emails.send({
-      from: 'ErikaEchevarri.com <onboarding@resend.dev>',
+      from: 'ErikaEchavarri.com <onboarding@resend.dev>',
       to: 'erika.olivos.sm@gmail.com',
       subject: subject,
       html: emailContent,

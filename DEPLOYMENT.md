@@ -15,7 +15,7 @@ git init
 git add .
 
 # Commit
-git commit -m "Initial commit - Erika Echevarri website"
+git commit -m "Initial commit - Erika Echavarri website"
 
 # Create a new repository on GitHub, then:
 git remote add origin https://github.com/YOUR_USERNAME/erika-echevarri.git
@@ -50,7 +50,7 @@ Click "Deploy" and Vercel will:
 
 1. Go to your project settings in Vercel
 2. Click "Domains"
-3. Add your custom domain (e.g., `erikaechevarri.com`)
+3. Add your custom domain (e.g., `erikaechavarri.com`)
 4. Follow Vercel's instructions to update DNS settings
 
 ## Automatic Deployments
