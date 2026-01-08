@@ -15,7 +15,7 @@ git init
 git add .
 
 # Commit
-git commit -m "Initial commit - Erika Echavarri website"
+git commit -m "Initial commit - Erika Echevarri website"
 
 # Create a new repository on GitHub, then:
 git remote add origin https://github.com/YOUR_USERNAME/erika-echevarri.git

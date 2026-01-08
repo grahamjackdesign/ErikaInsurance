@@ -98,7 +98,7 @@ export default function TerminosCondiciones() {
                 Si tiene alguna pregunta sobre estos términos y condiciones, puede contactarnos a través de:
               </p>
               <ul className="list-none space-y-2 ml-4">
-                <li><strong>Email:</strong> contacto@erikaechavarri.com</li>
+                <li><strong>Email:</strong> erika.olivos.sm@gmail.com</li>
                 <li><strong>Teléfono:</strong> +52 123 456 7890</li>
               </ul>
             </section>
