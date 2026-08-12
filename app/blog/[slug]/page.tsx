@@ -13,8 +13,9 @@ export async function generateStaticParams() {
   return slugs.map((s: { slug: string }) => ({ slug: s.slug }))
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = await client.fetch(postBySlugQuery, { slug: params.slug })
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const post = await client.fetch(postBySlugQuery, { slug })
   if (!post) return {}
   return {
     title: `${post.title} | Blog | Erika Echevarri`,
@@ -59,8 +60,9 @@ const portableTextComponents = {
   },
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await client.fetch(postBySlugQuery, { slug: params.slug })
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const post = await client.fetch(postBySlugQuery, { slug })
   if (!post) notFound()
 
   const date = new Date(post.publishedAt).toLocaleDateString('es-MX', {
