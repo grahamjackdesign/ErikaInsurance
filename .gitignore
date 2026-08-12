@@ -1,0 +1,65 @@
+# ─── Dependencies ───────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+
+# ─── Next.js ────────────────────────────────────────────────
+.next/
+out/
+build/
+
+# ─── Sanity ─────────────────────────────────────────────────
+.sanity/
+sanity/dist/
+
+# ─── Environment variables ──────────────────────────────────
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+
+# ─── Vercel ─────────────────────────────────────────────────
+.vercel
+
+# ─── TypeScript ─────────────────────────────────────────────
+*.tsbuildinfo
+next-env.d.ts
+
+# ─── Testing ────────────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ─── OS ─────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ─── Editors ────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# ─── Logs ───────────────────────────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# ─── Misc ───────────────────────────────────────────────────
+.cache/
+.turbo/
+.eslintcache
+*.tgz
