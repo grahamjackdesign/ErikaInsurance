@@ -4,6 +4,7 @@ import Nosotros from '@/components/Nosotros'
 import InsuranceLogos from '@/components/InsuranceLogos'
 import ContactoGeneral from '@/components/ContactoGeneral'
 import Seguros from '@/components/Seguros'
+import BlogPreview from '@/components/BlogPreview'
 //import Ahorros from '@/components/Ahorros'
 import Footer from '@/components/Footer'
 import CTABanner from '@/components/CTABanner'
@@ -17,6 +18,7 @@ export default function Home() {
       <Nosotros />
       <InsuranceLogos />
       <Seguros />
+      <BlogPreview />
       <ContactoGeneral />
       <Footer />
     </main>

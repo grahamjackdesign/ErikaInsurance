@@ -38,7 +38,7 @@ export default async function BlogPage({
           <div className="flex items-start gap-5 mb-6">
             <div className="flex-shrink-0 rounded-full" style={{ width: 6, height: 60, background: '#6C63FF', marginTop: 6 }} />
             <h1 className="text-5xl lg:text-6xl font-bold text-white" style={{ letterSpacing: '-0.02em', lineHeight: 1.2 }}>
-              Blog
+              Erika Sin Filtros
             </h1>
           </div>
           <p className="text-xl text-gray-400 max-w-xl ml-11">

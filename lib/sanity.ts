@@ -1,6 +1,7 @@
 // lib/sanity.ts
 import { createClient } from 'next-sanity'
 import imageUrlBuilder from '@sanity/image-url'
+import BlogPreview from '@/components/BlogPreview'
 
 export const client = createClient({
   projectId: 'zmy58g46',
