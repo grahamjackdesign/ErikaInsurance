@@ -13,14 +13,15 @@ export const metadata = {
 export default async function BlogPage({
   searchParams,
 }: {
-  searchParams: { categoria?: string }
+  searchParams: Promise<{ categoria?: string }>
 }) {
+  const { categoria: activeCategory } = await searchParams
+
   const [posts, categories] = await Promise.all([
     client.fetch(allPostsQuery),
     client.fetch(allCategoriesQuery),
   ])
 
-  const activeCategory = searchParams.categoria
   const filtered = activeCategory
     ? posts.filter((p: any) => p.category?.slug?.current === activeCategory)
     : posts
